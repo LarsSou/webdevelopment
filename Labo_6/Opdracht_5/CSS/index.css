@@ -1,0 +1,13 @@
+/* Styling voor hyperlinks met icoontje */
+a.icon-link {
+    padding-left: 25px;
+    background-image: url("../Files/images.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 16px 16px;
+    text-decoration: none;
+    color: #0066cc;
+}
+a.icon-link:hover {
+    text-decoration: underline;
+}

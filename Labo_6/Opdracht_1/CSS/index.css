@@ -1,0 +1,8 @@
+.menubalk > li {
+    display: inline-block;
+    width: 150px;
+}
+
+.menubalk > li > a {
+    color: red;
+}
