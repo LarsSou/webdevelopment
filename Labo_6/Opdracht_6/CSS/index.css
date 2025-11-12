@@ -1,0 +1,23 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+.checklist {
+    list-style: none;
+    padding: 0;
+}
+.checklist li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+}
+.checklist li::before {
+    content: '☐';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.checklist li.checked::before {
+    content: '☑';
+    color: green;
+}
