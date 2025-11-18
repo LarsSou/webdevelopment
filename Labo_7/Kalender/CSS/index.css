@@ -1,0 +1,42 @@
+table {
+    border-collapse: collapse;
+    border: 2px solid black !important;
+}
+tbody > tr > td:first-child {
+    background-color: #FFCCCC;
+}
+
+tbody > tr > td:last-child {
+    background-color: #FFCCCC;
+}
+
+.maand {
+    background-color: #aaaac8;
+    border: 1px dotted #c8bef0;
+}
+
+.dag {
+    background-color: #232545;
+    color: #c8bef0;
+    border-bottom: 1px dotted #c8bef0;
+}
+
+.andere_maand {
+    color: gray;
+    background-color: darkgrey !important;
+    border-right: 1px dotted gray;
+    border-bottom: 1px dotted gray;
+}
+
+.vrij {
+    background-color: #fa7878 !important;
+}
+
+th {
+    border-right : 1px dotted #c8bef0;
+}
+
+td {
+    border-right: 1px dotted black;
+    border-bottom: 1px dotted black;
+}

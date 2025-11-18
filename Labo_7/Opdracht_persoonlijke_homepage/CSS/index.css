@@ -2,9 +2,8 @@ body {
     background-color: navajowhite;
 }
 ul li:hover{
-   background-color: cadetblue;
+    background-color: cadetblue;
 }
-
 @keyframes rotate {
     from {
         transform: rotate(0deg);
@@ -17,11 +16,55 @@ img:hover {
     animation: rotate 252ms linear infinite;
 }
 h1:first-letter,h2:first-letter,h3:first-letter {
-
     font-family: "Mistral", cursive;
     font-size: 5em;
+    color: blue;
 }
 ul li:active{
     width: fit-content;
     margin: 0 auto;
+}
+h2,h3{
+    color: blueviolet;
+}
+/* Vriendentabel styling */
+.vrienden table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+.vrienden table thead tr {
+    background-color: #4CAF50;
+    color: white;
+    text-align: left;
+}
+.vrienden table th {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    color: white;
+}
+.vrienden table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    color: green;
+}
+.vrienden table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+.vrienden table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+.vrienden table tbody tr.alt {
+    background-color: #f9f9f9;
+}
+.vrienden table tbody tr:last-child {
+    border-bottom: 2px solid #4CAF50;
+}
+.prognoses td {
+    color: green;
+}
+.prognoses th {
+    color: red;
 }
