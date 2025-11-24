@@ -1,0 +1,88 @@
+body {
+    width: 95%;
+    margin: auto;
+    font-family: Verdana, Helvetica, Arial;
+    font-size: 1.2em;
+}
+
+header img {
+    display: block;
+    margin:auto;
+}
+
+section {
+    width: 70%;
+}
+
+h1 {
+    color: #007e7e;
+    font-size: 150%;
+}
+
+h2 {
+    color: #007e7e;
+    font-size: 130%;
+}
+
+p#guarantee {
+    margin: 30px;
+    padding: 20px;
+    color: #444444;
+    background-color: #a7cece;
+    border: 1px dashed white;
+}
+
+p#guarantee::before {
+    content: url("../images/background.gif");
+}
+
+body > article h1 {
+    color: black;
+}
+
+body > article {
+    float:right;
+    border: 2px solid #007e7e;
+    width: 30%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+    background: url("../images/cocktail.gif")repeat-x;
+    line-height: 1;
+
+}
+
+h2#aanbieding1 {
+    color: orangered;
+}
+
+h2#aanbieding2 {
+    color: red;
+}
+
+h2#aanbieding3 {
+    color: darkred;
+}
+
+footer {
+    text-align: center;
+    font-size: 50%;
+    width: 100%;
+}
+
+a {
+    color: black;
+}
+
+body > article > p a:hover {
+    background-color: brown;
+}
+
+ul > li:first-child{
+    font-style: italic;
+}
+
+ul > li > span{
+    font-weight: bold;
+    font-style: normal;
+}

@@ -1,0 +1,14 @@
+section {
+    display: inline-block;
+    border: 1px solid black;
+    width: 47%;
+    padding: 10px;
+    box-sizing: border-box;
+    vertical-align: top;
+    margin: 10px;
+    font-size: 16px;
+}
+body {
+    margin: 0;
+    font-size: 0;
+}
