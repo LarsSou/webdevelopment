@@ -1,0 +1,23 @@
+article{
+    border: 1px solid black;
+    width: fit-content;
+    height: 284px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+
+}
+p>img{
+    float: left;
+}
+article:nth-child(even) img{
+    float: right;
+}
+
+
+body{
+    width: 50%;
+    margin: 0 auto;
+}
+p,h2{
+    margin: 10px;
+}
