@@ -1,0 +1,19 @@
+body {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.row > div {
+    height: 150px;
+    background-clip: content-box;
+    background-color: #dbdfe5;
+    font-size: 0;
+}
+
+.row > div:nth-child(2n) {
+    background-color: #abb1b8;
+}
+
+footer {
+    text-align: center;
+}
