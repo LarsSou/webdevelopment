@@ -1,3 +1,6 @@
+body{
+    background-color: #2c3e50;
+}
 h1 {
     border-bottom: 2px solid black;
     text-align: center;
@@ -16,21 +19,92 @@ footer{
     font-size: 12px;
 }
 .row > .col-sm-12:nth-of-type(1) p{
-color: red;
+    color: red;
 }
 .row > .col-sm-12:nth-of-type(2) p{
-color: orange;
+    color: orange;
 }
 body > p:nth-of-type(1) {
     color: yellow;
 }
-
 body > p:nth-of-type(2) {
     color: green;
 }
-
-@media screen and (width>768) {
-    body{
-        background-color: grey;
-    }
+img{
+border-style: solid;
+border-width: 15px;
+border-color: black;
+width: 20%;
+float: left; / Standaard zweven naar links */
+}
+div > img:nth-of-type(2){
+float: right; / Zweeft naar rechts, overschrijft de algemene float: left;
+}
+.flex-column {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+margin-top: 20px;
+margin-bottom: 20px;
+}
+.flex-column img {
+float: none;
+display: block;
+}
+.grid-container{
+display: grid;
+margin:auto;
+width: 500px;
+text-align: center;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 10px;
+clear: both;
+}
+.block1{
+    background-color: red;
+}
+.block2{
+    background-color: orange;
+}
+.block3{
+    background-color: yellow;
+}
+.block4{
+    background-color: green;
+}
+.block5{
+    background-color: blue;
+}
+.block6{
+    background-color: indigo;
+}
+.block7{
+    background-color: violet;
+}
+@media screen and (width>768px) {
+body{
+background-color: grey;
+}
+.block1{
+    grid-row:7;
+}
+.block2{
+    grid-row:6;
+}
+.block3{
+    grid-row:5;
+}
+.block4{
+    grid-row:4;
+}
+.block5{
+    grid-row: 3;
+}
+.block6{
+    grid-row: 2;
+}
+.block7{
+    grid-row: 1;
+}
 }
