@@ -1,0 +1,36 @@
+h1 {
+    border-bottom: 2px solid black;
+    text-align: center;
+    color: blue;
+}
+h1:first-letter{
+    font-size: 60px;
+}
+p{
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+footer{
+    text-align: center;
+    font-size: 12px;
+}
+.row > .col-sm-12:nth-of-type(1) p{
+color: red;
+}
+.row > .col-sm-12:nth-of-type(2) p{
+color: orange;
+}
+body > p:nth-of-type(1) {
+    color: yellow;
+}
+
+body > p:nth-of-type(2) {
+    color: green;
+}
+
+@media screen and (width>768) {
+    body{
+        background-color: grey;
+    }
+}
