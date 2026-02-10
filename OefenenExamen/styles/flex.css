@@ -1,0 +1,52 @@
+/* Algemene styling */
+
+/* --- FLEXBOX STYLES --- */
+.flex-container {
+    display: flex;
+    flex-direction: row;      /* Items naast elkaar */
+    justify-content: center;  /* Horizontaal centreren */
+    align-items: center;      /* Verticaal centreren */
+    gap: 20px;                /* Ruimte tussen items */
+    background-color: #f4f4f4;
+    height: 200px;
+    padding: 10px;
+    border-radius: 8px;
+}
+.flex-item {
+    background-color: #3498db;
+    color: white;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    flex: 1;                  /* Items verdelen de beschikbare ruimte */
+    text-align: center;
+}
+/* --- GRID STYLES --- */
+.grid-container {
+    display: grid;
+/ 3 kolommen: 200px breed, en de rest verdeeld over 2 gelijke delen /
+grid-template-columns: 200px 1fr 1fr;
+/ Rijen zijn minimaal 100px hoog */
+grid-auto-rows: minmax(100px, auto);
+    gap: 15px;
+    padding: 10px;
+}
+.grid-item {
+    background-color: #2ecc71;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+/* Specifieke Grid posities */
+.header {
+    grid-column: 1 / 4;       / Loopt van de 1e naar de 4e lijn (volledige breedte) */
+background-color: #e74c3c;
+}
+.sidebar {
+    grid-row: 2 / 4;          /* Loopt over twee rijen verticaal */
+    background-color: #f1c40f;
+}
