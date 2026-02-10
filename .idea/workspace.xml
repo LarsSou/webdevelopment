@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f792014e-9d93-41dc-8399-dbb73b14393f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Labo_14/html/array.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labo_14/html/dialoog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labo_14/html/innerhtml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labo_14/html/innerhtmlAanpassing.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labo_14/html/kopieer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labo_14/html/substring.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labo_14/scripts/arrays.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labo_14/scripts/dialoogvenster.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labo_14/scripts/innerhtml.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labo_14/scripts/innerhtmlAanpassing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labo_14/scripts/kopieer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Labo_14/scripts/substring.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,22 +56,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.array.html.executor": "Debug",
+    "JavaScript Debug.dialoog.html.executor": "Debug",
+    "JavaScript Debug.index.html.executor": "Debug",
+    "JavaScript Debug.innerhtml.html.executor": "Debug",
+    "JavaScript Debug.innerhtmlAanpassing.html.executor": "Debug",
+    "JavaScript Debug.kopieer.html.executor": "Debug",
+    "JavaScript Debug.substring.html.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.arrays.js.executor": "Debug",
+    "Node.js.dialoogvenster.js.executor": "Debug",
+    "Node.js.index.js.executor": "Debug",
+    "Node.js.innerhtmlAanpassing.js.executor": "Debug",
+    "Node.js.substring.js.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Labo_14/html" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -64,6 +109,7 @@
       <updated>1770727931135</updated>
       <workItem from="1770727932169" duration="87000" />
       <workItem from="1770728042865" duration="1000" />
+      <workItem from="1770730768326" duration="7119000" />
     </task>
     <servers />
   </component>
