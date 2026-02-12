@@ -1,3 +1,4 @@
+/* Algemene body styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -14,10 +15,12 @@ h1 {
     border-bottom: 3px solid #3498db;
 }
 
-/* Dropdown Basis */
+/* Dropdown basis */
 .dropdown {
     position: relative;
     display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 20px;
 }
 
 .dropbtn {
@@ -39,10 +42,10 @@ h1 {
     transform: translateY(-2px);
 }
 
-/* Dropdown Content */
+/* Dropdown content */
 .dropdown-content {
-    opacity: 0;               /* start onzichtbaar */
-    visibility: hidden;       /* voorkomt klikbare inhoud */
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
     background-color: #ffffff;
     min-width: 250px;
@@ -51,22 +54,26 @@ h1 {
     border-radius: 8px;
     padding: 15px;
     margin-top: 5px;
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* vloeiende overgang */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 /* Toon dropdown bij hover */
 .dropdown:hover .dropdown-content {
-    opacity: 1;              /* zichtbaar */
-    visibility: visible;     /* klikbaar */
+    opacity: 1;
+    visibility: visible;
 }
 
-/* Styling voor de Labo-secties binnen de dropdown */
-.dropdown-content div {
+/* Labo-secties */
+.dropdown-content .labo {
     margin-bottom: 15px;
+}
+
+.labo-title {
     font-weight: bold;
     color: #2c3e50;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .dropdown-content a {
@@ -85,19 +92,39 @@ h1 {
     background-color: #f8f9fa;
 }
 
-/* Grid-container specifiek voor de layout binnen de dropdown indien nodig */
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
+/* Zoekbalk en suggesties */
+.search-container {
+    position: relative;
+    width: 300px;
+    margin-bottom: 20px;
 }
 
-/* Algemene link styling (buiten dropdown) */
-a {
-    color: #3498db;
-    text-decoration: none;
+#searchInput {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
-/* Opschonen van onnodige elementen */
-p br {
+.suggestions-box {
+    position: absolute;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-top: none;
     display: none;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    border-radius: 0 0 5px 5px;
+}
+
+.suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
 }
