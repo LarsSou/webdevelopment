@@ -1,0 +1,14 @@
+.colorDemo {
+	width:100px;
+	height:100px;
+	border:1px solid black;
+}
+#red{
+	accent-color: red;
+}
+#green{
+	accent-color: green;
+}
+#blue{
+	accent-color: blue;
+}
