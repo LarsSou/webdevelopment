@@ -21,6 +21,11 @@ const update = () => {
 	let valueG=sliders[1].value;
 	let valueB=sliders[2].value;
 
+	let value=document.getElementsByClassName("value");
+	value[0].innerText = valueR;
+	valueG = value[1].innerText = valueG;
+	valueB = value[2].innerText = valueB;
+
 	console.log("de waarde van de slider R is momenteel : "+valueR);
 	console.log("de waarde van de slider G is momenteel : "+valueG);
 	console.log("de waarde van de slider B is momenteel : "+valueB);

@@ -57,7 +57,6 @@ searchInput.addEventListener("input", () => {
     suggestionsBox.style.display = "block";
 });
 
-// Toon enkel gekozen labo + open juiste dropdown
 function showOnlyLabo(selectedLabo) {
 
     document.querySelectorAll(".dropdown").forEach(dropdown => {
