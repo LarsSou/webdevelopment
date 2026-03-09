@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f792014e-9d93-41dc-8399-dbb73b14393f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_16/invulformulier/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_16/invulformulier/scripts/css.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_16/man_van_an/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_16/man_van_an/scripts/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_16/spaties_met_functie/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_16/spaties_met_functie/scripts/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_16/spaties_op_console/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_16/spaties_op_console/scripts/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_16/typeof/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_16/typeof/scripts/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester2/Labo_15/colorPicker/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/Labo_15/colorPicker/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester2/Labo_15/colorPicker/scripts/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/Labo_15/colorPicker/scripts/code.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/searchScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/searchScript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +26,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -66,6 +74,7 @@
     &quot;Node.js.script.js.executor&quot;: &quot;Debug&quot;,
     &quot;Node.js.substring.js.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
@@ -117,10 +126,26 @@
       <workItem from="1770884030949" duration="1607000" />
       <workItem from="1771941076056" duration="7574000" />
       <workItem from="1772141237909" duration="1257000" />
+      <workItem from="1772468821251" duration="1189000" />
+      <workItem from="1772542814470" duration="9750000" />
+      <workItem from="1773064870936" duration="4029000" />
+      <workItem from="1773091783955" duration="833000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Semester2/Labo_16/man_van_an/scripts/script.js</url>
+          <line>32</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
