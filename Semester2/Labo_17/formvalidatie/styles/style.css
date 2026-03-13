@@ -1,0 +1,16 @@
+body{
+    font-family: Arial;
+}
+
+input{
+    margin-left:10px;
+}
+
+.error{
+    border:2px solid red;
+}
+
+.errorMessage{
+    color:red;
+    margin-left:10px;
+}

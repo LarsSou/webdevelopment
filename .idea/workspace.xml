@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f792014e-9d93-41dc-8399-dbb73b14393f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Semester2/Labo_17/de_en_het/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Semester2/Labo_17/de_en_het/scripts/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Semester2/Labo_17/formwaarden/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Semester2/Labo_17/formwaarden/scripts/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Semester2/Labo_17/gemeenten/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Semester2/Labo_17/gemeenten/scripts/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Semester2/Labo_17/trigrams/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Semester2/Labo_17/trigrams/scripts/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_17/formvalidatie/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_17/formvalidatie/scripts/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_17/formvalidatie/styles/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semester2/Labo_17/formwaarden/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/Labo_17/formwaarden/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -128,6 +125,9 @@
       <workItem from="1773064870936" duration="4029000" />
       <workItem from="1773091783955" duration="833000" />
       <workItem from="1773151285210" duration="5979000" />
+      <workItem from="1773157869870" duration="385000" />
+      <workItem from="1773229779343" duration="1488000" />
+      <workItem from="1773397912124" duration="4000" />
     </task>
     <servers />
   </component>
