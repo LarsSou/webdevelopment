@@ -1,5 +1,5 @@
 // Alles terug tonen
-function showAllLabos() {
+const showAllLabos=()=> {
 
     document.querySelectorAll(".dropdown").forEach(dropdown => {
         dropdown.style.display = "inline-block";
@@ -57,7 +57,7 @@ searchInput.addEventListener("input", () => {
     suggestionsBox.style.display = "block";
 });
 
-function showOnlyLabo(selectedLabo) {
+const showOnlyLabo=(selectedLabo)=> {
 
     document.querySelectorAll(".dropdown").forEach(dropdown => {
 
