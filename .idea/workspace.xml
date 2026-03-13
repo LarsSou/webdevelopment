@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f792014e-9d93-41dc-8399-dbb73b14393f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/script/searchScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/searchScript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +123,7 @@
       <workItem from="1773157869870" duration="385000" />
       <workItem from="1773229779343" duration="1488000" />
       <workItem from="1773397912124" duration="4000" />
-      <workItem from="1773401199811" duration="42000" />
+      <workItem from="1773401199811" duration="214000" />
     </task>
     <servers />
   </component>
