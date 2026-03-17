@@ -43,14 +43,22 @@ const save = () => {
 
     let ColorPreview = document.createElement("div");
 
+    let buttonRemove = document.createElement("button");
+    buttonRemove.textContent = "X";
+    buttonRemove.style.width = "30px";
+
+    ColorPreview.append(buttonRemove);
+    buttonRemove.addEventListener("click", remove);
+
     ColorPreview.style.width = "100px";
     ColorPreview.style.height = "100px";
     ColorPreview.style.margin = "5px";
     ColorPreview.style.display = "inline-block";
     ColorPreview.style.border = "1px solid black";
 
-    let rgbString = "rgb(" + valueR + "," + valueG + "," + valueB + ")";
-    ColorPreview.style.backgroundColor = rgbString;
+    ColorPreview.classList.add("color-preview"); // Correcte manier om class toe te voegen
+
+    ColorPreview.style.backgroundColor = "rgb(" + valueR + "," + valueG + "," + valueB + ")";
 
     ColorPreview.dataset.r = valueR;
     ColorPreview.dataset.g = valueG;
@@ -67,6 +75,11 @@ const save = () => {
     });
 
     document.body.append(ColorPreview);
+};
+
+const remove = (event) => {
+    event.stopPropagation(); 
+    event.target.parentElement.remove();
 };
 
 window.addEventListener("load", setup);

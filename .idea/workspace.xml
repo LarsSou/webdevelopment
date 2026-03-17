@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f792014e-9d93-41dc-8399-dbb73b14393f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semester2/Labo_18/Colorpicker-Extra/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/Labo_18/Colorpicker-Extra/scripts/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +134,7 @@
       <workItem from="1773740395868" duration="146000" />
       <workItem from="1773756255156" duration="3928000" />
       <workItem from="1773760226011" duration="200000" />
+      <workItem from="1773762582025" duration="703000" />
     </task>
     <servers />
   </component>
