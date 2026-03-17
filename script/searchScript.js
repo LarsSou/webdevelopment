@@ -1,4 +1,6 @@
-// Alles terug tonen
+
+
+
 const showAllLabos=()=> {
 
     document.querySelectorAll(".dropdown").forEach(dropdown => {
@@ -12,11 +14,10 @@ const showAllLabos=()=> {
 }
 
 
-//input wordt gezocht
 const searchInput = document.getElementById("searchInput");
-//alles die overeenkomt
+
 const suggestionsBox = document.getElementById("suggestions");
-//alles dat begint met labo
+
 const labos = Array.from(document.querySelectorAll(".labo"))
     .map(l => l.dataset.labo);
 
@@ -75,8 +76,15 @@ const showOnlyLabo=(selectedLabo)=> {
         } else {
             dropdown.style.display = "none";
         }
-
     });
 }
+const refreshSearch = () => {
+    searchInput.value = "";
+}
+const funButton=()=>{
+    let button = document.getElementById("funButton");
+
+}
+window.addEventListener("reset", (refreshSearch));
 
 

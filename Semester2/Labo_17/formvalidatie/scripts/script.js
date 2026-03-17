@@ -1,101 +1,42 @@
-document.getElementById("valideer").addEventListener("click", valideer);
+const v = id => document.getElementById(id).value.trim();
+const e = (id, msg) => document.getElementById(id).textContent = msg;
+const isGetal = t => !isNaN(t);
+const setup = () => {
+    document.getElementById("valideer").onclick = () => {
+        let ok = true;
 
-const valideer(){
+        if (v("voornaam").length > 30) {
+            e("voornaam-error", "max. 30 karakters"); ok = false;
+        } else e("voornaam-error", "");
 
-    resetErrors();
+        let fam = v("familienaam");
+        if (fam === "") { e("familienaam-error", "verplicht veld"); ok = false; }
+        else if (fam.length > 50) { e("familienaam-error", "max 50 karakters"); ok = false; }
+        else e("familienaam-error", "");
 
-    checkVoornaam();
-    checkFamilienaam();
-    checkGeboorte();
-    checkEmail();
-    checkKinderen();
+        let g = v("geboortedatum");
+        if (g === "") { e("geboortedatum-error", "verplicht veld"); ok = false; }
+        else if (g.length !== 10 || g[4] !== "-" || g[7] !== "-" ||
+            !isGetal(g.substring(0,4)) ||
+            !isGetal(g.substring(5,7)) || g.substring(5,7) <= 0 ||
+            !isGetal(g.substring(8))   || g.substring(8) <= 0) {
+            e("geboortedatum-error", "formaat is niet jjjj-mm-dd"); ok = false;
+        } else e("geboortedatum-error", "");
 
-}
+        let mail = v("email"), a = mail.indexOf("@"), b = mail.lastIndexOf("@");
+        if (mail === "") { e("email-error", "verplicht veld"); ok = false; }
+        else if (a !== b || a <= 0 || a === mail.length - 1) {
+            e("email-error", "geen geldig email adres"); ok = false;
+        } else e("email-error", "");
 
-function resetErrors(){
+        let k = v("aantalKinderen");
+        if (!isGetal(k) || k < 0) {
+            e("aantalKinderen-error", "is geen positief getal"); ok = false;
+        } else if (k >= 99) {
+            e("aantalKinderen-error", "is te vruchtbaar"); ok = false;
+        } else e("aantalKinderen-error", "");
 
-    let inputs = document.querySelectorAll("input");
-
-    inputs.forEach(input => {
-        input.classList.remove("error");
-        input.nextElementSibling.innerHTML = "";
-    });
-
-}
-
-function checkVoornaam(){
-
-    let v = document.getElementById("voornaam");
-
-    if(v.value.length > 30){
-        setError(v,"max. 30 karakters");
-    }
-
-}
-
-function checkFamilienaam(){
-
-    let f = document.getElementById("familienaam");
-
-    if(f.value === ""){
-        setError(f,"verplicht veld");
-    }
-    else if(f.value.length > 50){
-        setError(f,"max 50 karakters");
-    }
-
-}
-
-function checkGeboorte(){
-
-    let g = document.getElementById("geboorte");
-
-    if(g.value === ""){
-        setError(g,"verplicht veld");
-        return;
-    }
-
-    let regex = /^\d{4}-\d{2}-\d{2}$/;
-
-    if(!regex.test(g.value)){
-        setError(g,"formaat is niet jjjj-mm-dd");
-    }
-
-}
-
-function checkEmail(){
-
-    let e = document.getElementById("email");
-
-    if(e.value === ""){
-        setError(e,"verplicht veld");
-        return;
-    }
-
-    let regex = /^[^@]+@[^@]+$/;
-
-    if(!regex.test(e.value)){
-        setError(e,"geen geldig email adres");
-    }
-
-}
-
-function checkKinderen(){
-
-    let k = document.getElementById("kinderen");
-
-    if(k.value === "" || k.value < 0){
-        setError(k,"is geen positief getal");
-    }
-    else if(k.value >= 99){
-        setError(k,"is te vruchtbaar");
-    }
-
-}
-
-function setError(input, message){
-
-    input.classList.add("error");
-    input.nextElementSibling.innerHTML = message;
-
-}
+        if (ok) alert("proficiat!");
+    };
+};
+window.onload = setup;
