@@ -1,7 +1,9 @@
 const setup = () => {
     let button = document.getElementById("funButton");
     button.addEventListener("mouseenter", funButton )
-
+    if(location.reload){
+        refreshSearch()
+    }
 }
 
 const showAllLabos=()=> {
@@ -90,6 +92,6 @@ const funButton=()=>{
     let body = document.querySelector("body");
     body.style.color = "white";
 }
-window.addEventListener("reset", (refreshSearch));
+window.addEventListener("load", setup);
 
 
