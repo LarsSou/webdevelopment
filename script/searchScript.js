@@ -1,5 +1,8 @@
+const setup = () => {
+    let button = document.getElementById("funButton");
+    button.addEventListener("mouseenter", funButton )
 
-
+}
 
 const showAllLabos=()=> {
 
@@ -11,6 +14,8 @@ const showAllLabos=()=> {
     document.querySelectorAll(".labo").forEach(l => {
         l.style.display = "block";
     });
+
+
 }
 
 
@@ -82,8 +87,8 @@ const refreshSearch = () => {
     searchInput.value = "";
 }
 const funButton=()=>{
-    let button = document.getElementById("funButton");
-
+    let body = document.querySelector("body");
+    body.style.color = "white";
 }
 window.addEventListener("reset", (refreshSearch));
 

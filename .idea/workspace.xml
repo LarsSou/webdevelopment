@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f792014e-9d93-41dc-8399-dbb73b14393f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/images/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/images/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/images/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/images/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/script/code.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/style/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Semester2/Labo_18/Colorpicker-Extra/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/Labo_18/Colorpicker-Extra/scripts/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/searchScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/searchScript.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -92,11 +101,11 @@
       <recent name="$PROJECT_DIR$/Semester2/Labo_18/Node_opdracht_2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/images" />
+      <recent name="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_17/gemeenten/scripts" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_17/trigrams/scripts" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_17/trigrams/" />
-      <recent name="$PROJECT_DIR$/Semester2/Labo_15/Paragraaf" />
-      <recent name="$PROJECT_DIR$/Semester2/DEMO SLIDER" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -134,11 +143,24 @@
       <workItem from="1773740395868" duration="146000" />
       <workItem from="1773756255156" duration="3928000" />
       <workItem from="1773760226011" duration="200000" />
-      <workItem from="1773762582025" duration="703000" />
+      <workItem from="1773762582025" duration="1333000" />
+      <workItem from="1774433635904" duration="72000" />
+      <workItem from="1774433722431" duration="5590000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

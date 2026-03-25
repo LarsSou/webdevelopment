@@ -78,7 +78,7 @@ const save = () => {
 };
 
 const remove = (event) => {
-    event.stopPropagation(); 
+    event.stopPropagation();
     event.target.parentElement.remove();
 };
 
