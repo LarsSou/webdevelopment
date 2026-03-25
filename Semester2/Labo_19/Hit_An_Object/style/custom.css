@@ -2,7 +2,9 @@ html, body {
     margin:0px;
 }
 
-#speelveld {
+#playField {
+    height: 800px;
+    width: 600px;
     position:relative;
     border:solid 1px black;
     box-sizing:border-box; /* anders krijgen we scrollbars omdat het element door de border net te groot wordt */

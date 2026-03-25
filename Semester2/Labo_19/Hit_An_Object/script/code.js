@@ -10,6 +10,7 @@ const setup = () => {
     sprite.addEventListener("click", spritePressed)
 
 
+
 }
 let global = {
     IMAGE_COUNT: 5,
