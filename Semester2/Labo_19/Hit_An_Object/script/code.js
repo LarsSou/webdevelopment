@@ -9,6 +9,7 @@ const setup = () => {
     let sprite = document.getElementsByClassName("sprite")[0];
     sprite.addEventListener("click", spritePressed)
 
+
 }
 let global = {
     IMAGE_COUNT: 5,
@@ -21,7 +22,9 @@ let global = {
     MOVE_DELAY: 3000, // aantal ms voor een nieuwe afbeelding verschijnt
     score: 0,
 // aantal hits
-    timeoutId: 0 // id van de timeout timer, zodat we kunnen annuleren
+    timeoutId: 0, // id van de timeout timer, zodat we kunnen annuleren
+    gameStarted: false,
+
 };
 const returnToOrignalState = () =>{
     location.reload();
@@ -57,6 +60,7 @@ const gui = () =>{
     field.style.scale = "75%";
 }
 const startGame = ()=> {
+    global.gameStarted = true;
     global.timeoutId = setInterval(change, global.MOVE_DELAY);
     moveSprite();
 }
@@ -68,10 +72,11 @@ const updateScore = () => {
 
 }
 const spritePressed=()=>{
-
+    if(global.gameStarted){
     moveSprite();
     global.score++;
     updateScore();
+    }
 }
 
 const updateSize = () => {
