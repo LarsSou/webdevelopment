@@ -128,3 +128,6 @@ h1 {
 .suggestion-item:hover {
     background-color: #f0f0f0;
 }
+#funButton{
+    position: absolute;
+}

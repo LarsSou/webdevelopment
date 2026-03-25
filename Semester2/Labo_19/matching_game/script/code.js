@@ -15,6 +15,10 @@ const global = {
     PATH_PREFIX: "images/kaart",
     PATH_SUFFIX: ".jpg",
     score: 0,
+
+    soundCorrect: new Audio("sounds/soundCorrect.mp3"),
+    soundTurn1: new Audio("sounds/soundFirst.mp3"),
+    soundError: new Audio("sounds/error.mp3"),
 };
 
 const maakKaarten = () => {
@@ -23,6 +27,7 @@ const maakKaarten = () => {
     for (let i = 1; i <= global.AANTAL_KAARTEN / 2; i++) {
         kaarten.push(global.PATH_PREFIX + i.toString() + global.PATH_SUFFIX);
     }
+
     let dubbel = kaarten.concat(kaarten);
     dubbel.sort(() => Math.random() - 0.5);
     return dubbel;
@@ -61,8 +66,12 @@ const kaartDraaien = (event) => {
     img.src = kaart.dataset.kaart;
 
     if (!global.eersteKaart) {
+        global.soundTurn1.currentTime = 0;
+        global.soundTurn1.play();
         global.eersteKaart = kaart;
     } else {
+        global.soundTurn1.currentTime = 0;
+        global.soundTurn1.play();
         global.tweedeKaart = kaart;
         global.lock = true;
         checkMatch();
@@ -74,6 +83,9 @@ const checkMatch = () => {
     let kaart2 = global.tweedeKaart;
 
     if (kaart1.dataset.kaart === kaart2.dataset.kaart) {
+        global.soundCorrect.currentTime = 0;
+        global.soundCorrect.play();
+
         setTimeout(() => {
             kaart1.style.visibility = "hidden";
             kaart2.style.visibility = "hidden";
@@ -85,11 +97,13 @@ const checkMatch = () => {
 
             if (global.score === global.AANTAL_KAARTEN / 2) {
                 setTimeout(() => alert("Gewonnen!"), 100);
-                location.reload();
+                setTimeout(() => alert("Gewonnen!"), 1000);
             }
-        }, 1000); // ✅ sluit de setTimeout
+        }, 1500);
     } else {
         setTimeout(() => {
+            global.soundError.currentTime = 0;
+            global.soundError.play();
             kaart1.querySelector("img").src = "images/achterkant.jpg";
             kaart2.querySelector("img").src = "images/achterkant.jpg";
             resetBeurt();
@@ -97,7 +111,6 @@ const checkMatch = () => {
     }
 };
 
-// ✅ FIX: scorebord buiten spelbord zodat het niet gewist wordt bij herstart
 const gui = () => {
     let scoreBoard = document.getElementById("scoreBoard");
     if (!scoreBoard) {
