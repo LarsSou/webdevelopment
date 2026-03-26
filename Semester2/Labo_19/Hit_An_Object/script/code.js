@@ -26,6 +26,7 @@ let global = {
     timeoutId: 0, // id van de timeout timer, zodat we kunnen annuleren
     gameStarted: false,
 
+    COIN_SOUND: new Audio("sounds/coinClaimed.mp3"),
 };
 const returnToOrignalState = () =>{
     location.reload();
@@ -57,7 +58,7 @@ const gui = () =>{
 
     field.append(startButton);
     field.append(hits);
-    field.style.border = "10px solid black";
+    field.style.border = "2px solid black";
     field.style.scale = "75%";
 }
 const startGame = ()=> {
@@ -75,20 +76,15 @@ const updateScore = () => {
 const spritePressed=()=>{
     if(global.gameStarted){
     moveSprite();
+    global.COIN_SOUND.currentTime = 0;
+    global.COIN_SOUND.play();
     global.score++;
     updateScore();
     }
 }
 
 const updateSize = () => {
-    // telkens het window van grootte verandert,
-    // wordt deze method opgeroepen
-    //
-    // Merk op dat de <div> voor layout redenen "leeg" is,
-    // omdat het enige kind absoluut gepositioneerd is. Als
-    // we niets speciaals doen zal het dus 0px hoog zijn.
-    // Daarom stellen we hier programmatorisch de breedte
-    // en hoogte in, zodat het altijd alle ruimte inneemt.
+
     let speelveld=document.getElementById("speelveld");
     speelveld.style.width=window.innerWidth+"px";
     speelveld.style.height=window.innerHeight+"px";

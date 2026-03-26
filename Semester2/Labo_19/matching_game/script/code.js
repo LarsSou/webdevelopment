@@ -1,6 +1,7 @@
 const setup = () => {
-    startSpel();
     gui();
+    startSpel();
+
 };
 
 const global = {
@@ -97,7 +98,7 @@ const checkMatch = () => {
 
             if (global.score === global.AANTAL_KAARTEN / 2) {
                 setTimeout(() => alert("Gewonnen!"), 100);
-                setTimeout(() => alert("Gewonnen!"), 1000);
+                setTimeout(() => location.reload(),  1000);
             }
         }, 1500);
     } else {

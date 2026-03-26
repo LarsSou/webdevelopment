@@ -96,7 +96,12 @@ h1 {
 .search-container {
     position: relative;
     width: 300px;
-    margin-bottom: 20px;
+    margin: 0 auto;
+}
+.semester-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 #searchInput {

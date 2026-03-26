@@ -1,0 +1,19 @@
+GET http://www.google.be
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+cookie: AEC=AaJma5t-7KtdJZ41wm3iYQy2XY5pTLejdKopAI_zZulOyFndEgV8kWQJjw
+
+<> 2026-03-26T094024.200.html
+
+###
+
+GET http://www.google.be
+User-Agent: IntelliJ HTTP Client/WebStorm 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-03-26T094014.200.html
+
+###
+
