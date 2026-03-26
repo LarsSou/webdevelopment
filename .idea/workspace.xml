@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f792014e-9d93-41dc-8399-dbb73b14393f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/sounds/coinClaimed.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/images/grassFloor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/images/hero.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/images/hero_punch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/script/movement.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/style/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester1/Labo_2/Opdracht_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Semester1/Labo_2/Opdracht_3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/script/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/script/code.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/style/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/style/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester2/Labo_19/matching_game/script/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/Labo_19/matching_game/script/code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +22,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="CSS File" />
         <option value="HTTP Request" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -102,11 +103,11 @@
       <recent name="$PROJECT_DIR$/Semester2/Labo_18/Node_opdracht_2/img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Semester2/extra_game/images" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/sounds" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_19/matching_game/sounds" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_19/matching_game/images" />
-      <recent name="$PROJECT_DIR$/Semester2/Labo_19/Hit_An_Object/images" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -149,7 +150,11 @@
       <workItem from="1774433722431" duration="6087000" />
       <workItem from="1774450045608" duration="10244000" />
       <workItem from="1774514179350" duration="3890000" />
-      <workItem from="1774519096235" duration="471000" />
+      <workItem from="1774519096235" duration="596000" />
+      <workItem from="1774521451180" duration="1354000" />
+      <workItem from="1774537362353" duration="170000" />
+      <workItem from="1774537541339" duration="3990000" />
+      <workItem from="1774560494672" duration="3348000" />
     </task>
     <servers />
   </component>

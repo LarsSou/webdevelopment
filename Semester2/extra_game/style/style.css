@@ -1,0 +1,29 @@
+body {
+    background-color: lightblue;
+    overflow: hidden;
+    margin: 0;
+}
+
+.ground {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 600px;
+    background-image: url('../images/grassFloor.png');
+    background-repeat: repeat-x;
+    background-size: 500px 600px;
+}
+.sprite-container {
+    position: fixed;
+    bottom: 100px;
+    left: 200px;
+}
+
+.sprite.swing-up {
+    transform: translateY(-40px) rotate(-30deg);
+}
+
+.sprite.swing-down {
+    transform: translateY(10px) rotate(10deg);
+}
