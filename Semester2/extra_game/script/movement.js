@@ -126,6 +126,7 @@ const showPowerUpEffect = (active) => {
         : '';
 };
 
+
 // ─── Richting & rust-beeld ────────────────────────────────────────────────────
 
 const changeDirection = () => {
@@ -200,7 +201,6 @@ const movement = () => {
     global.hero.style.bottom = global.heroY + 'px';
     global.ground.style.backgroundPositionX = -global.offset + 'px';
 
-    checkGroundRefresh(prevOffset);
     updateGoldenBallPosition();
     checkGoldenBallCollision();
 
