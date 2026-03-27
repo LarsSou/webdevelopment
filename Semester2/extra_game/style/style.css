@@ -24,9 +24,10 @@ body {
     position: absolute;
     width: 100%;
 }
-#goldenBall{
+#goldenBall {
     position: absolute;
-    width: 40px; height: 40px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: radial-gradient(circle at 35% 35%, #ffffa0, #ffd700, #ff8c00);
     box-shadow: 0 0 15px 6px rgba(255, 215, 0, 0.8),
@@ -34,4 +35,8 @@ body {
     display: none;
     bottom: 120px;
     z-index: 100;
+}
+#enemy{
+    position: absolute;
+    margin-bottom: 100px;
 }
