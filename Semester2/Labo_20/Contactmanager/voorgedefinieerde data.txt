@@ -1,0 +1,23 @@
+let personen=[       
+	{
+        voornaam: 'Jan',
+        familienaam: 'Janssens',
+        geboorteDatum: new Date('2010-10-10'),
+        email: 'jan@example.com',
+        aantalKinderen: 0
+    },
+    {
+        voornaam: 'Mieke',
+        familienaam: 'Mickelsen',
+        geboorteDatum: new Date('1980-01-01'),
+        email: 'mieke@example.com',
+        aantalKinderen: 1
+    },
+    {
+        voornaam: 'Piet',
+        familienaam: 'Pieters',
+        geboorteDatum: new Date('1970-12-31'),
+        email: 'piet@example.com',
+        aantalKinderen: 2
+    }
+];
