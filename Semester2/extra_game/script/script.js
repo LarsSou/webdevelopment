@@ -348,20 +348,26 @@ const script = () => {
     }
 
     // ─── Sliding / Crouch ───
+    // ─── Sliding / Crouch ───
     if (global.movingDown) {
-        if (global.movingLeft || global.movingRight) {
-            if (!global.sliding) {
-                global.sliding = true;
-                global.speed += 5;
-                console.log("Sliding gestart, speed:", global.speed);
+        if ((global.movingLeft || global.movingRight) && !global.sliding && !global.slidingCooldown) {
+            global.sliding = true;
+            global.slidingCooldown = true; // start cooldown
+            global.speed += 5;
+            console.log("Sliding gestart, speed:", global.speed);
 
-                setTimeout(() => {
-                    global.speed -= 2;
-                    global.sliding = false;
-                    console.log("Sliding afgelopen, speed terug:", global.speed);
-                }, 500);
-            }
-        } else {
+            setTimeout(() => {
+                global.speed -= 5;
+                global.sliding = false;
+                console.log("Sliding afgelopen, speed terug:", global.speed);
+            }, 500); // sliding duration
+
+            // reset cooldown na 1 seconde
+            setTimeout(() => {
+                global.slidingCooldown = false;
+                console.log("Sliding is weer beschikbaar");
+            }, 1000);
+        } else if (!global.movingLeft && !global.movingRight) {
             console.log("Crouch");
         }
     }
