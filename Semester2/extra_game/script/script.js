@@ -3,6 +3,7 @@ const global = {
     hero: document.querySelector('.hero'),
     rustImage: document.querySelector('.hero'),
 
+    SPRITE_CONTAINER_OFFSET: 200,
     tileWidth: 500,
     speed: 5,
     baseSpeed: 5,
@@ -25,7 +26,9 @@ const global = {
     movingLeft: false,
     movingDown: false,
     isSwinging: false,
-    sliding: false, // sliding flag
+    sliding: false,
+    slidingCooldown: false,
+    isDead: false,
 
     direction: 'right',
 
@@ -40,6 +43,7 @@ const global = {
 
     goldenBallVisible: false,
     goldenBallWorldX: 0,
+    
 
     // ── Enemy ──
     enemy: null,
@@ -55,11 +59,29 @@ const global = {
     enemyKnockback: 0,
     enemyHPBar: null,
     enemyHPFill: null,
+    enemyIsSwinging: false,
+
+    // ── Hitboxes ──
+    enemyHitboxOffsetX: -15,
+    enemyHitboxWidth: 150,
+    enemyHitboxHeight: 100,
+
+    heroHitboxOffsetX: 180,
+    heroHitboxWidth: 150,
+
+    // ── Debug ──
+    debugHitboxes: true,
 
     heroHP: 150,
+    heroMaxHP: 150,
     heroDmg: 20,
     heroBoostedDmg: 40,
     heroHitCooldown: false,
+
+    // ── Hero HP balk ──
+    heroHPBar: null,
+    heroHPFill: null,
+    heroHPLabel: null,
 };
 
 // ─── Setup ───────────────────────────────────────────────────────────────
@@ -81,7 +103,7 @@ const setup = () => {
     global.enemy.style.display = 'none';
     global.enemy.style.transition = 'opacity 0.4s';
 
-    // HP-balk container
+    // Enemy HP balk container
     global.enemyHPBar = document.createElement('div');
     global.enemyHPBar.style.cssText = `
         position: absolute;
@@ -94,7 +116,7 @@ const setup = () => {
         overflow: hidden;
     `;
 
-    // HP-balk vulling
+    // Enemy HP balk vulling
     global.enemyHPFill = document.createElement('div');
     global.enemyHPFill.style.cssText = `
         height: 100%;
@@ -105,6 +127,62 @@ const setup = () => {
     `;
     global.enemyHPBar.appendChild(global.enemyHPFill);
     document.body.appendChild(global.enemyHPBar);
+
+    // ── Hero HP balk ──
+    global.heroHPBar = document.createElement('div');
+    global.heroHPBar.style.cssText = `
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 200px;
+        height: 18px;
+        background: #333;
+        border: 2px solid #000;
+        border-radius: 6px;
+        overflow: hidden;
+        z-index: 1000;
+    `;
+
+    global.heroHPFill = document.createElement('div');
+    global.heroHPFill.style.cssText = `
+        height: 100%;
+        width: 100%;
+        background: #2ecc71;
+        border-radius: 4px;
+        transition: width 0.15s, background 0.3s;
+    `;
+
+    global.heroHPLabel = document.createElement('div');
+    global.heroHPLabel.textContent = `HP: ${global.heroHP}`;
+    global.heroHPLabel.style.cssText = `
+        position: fixed;
+        top: 22px;
+        left: 228px;
+        color: white;
+        font-family: sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        text-shadow: 0 0 4px #000;
+        z-index: 1000;
+    `;
+
+    global.heroHPBar.appendChild(global.heroHPFill);
+    document.body.appendChild(global.heroHPBar);
+    document.body.appendChild(global.heroHPLabel);
+
+    // ── Debug hitbox elementen ──
+    global.debugEnemyBox = document.createElement('div');
+    global.debugHeroBox  = document.createElement('div');
+    [global.debugEnemyBox, global.debugHeroBox].forEach(el => {
+        el.style.cssText = `
+            position: absolute;
+            border: 2px solid red;
+            pointer-events: none;
+            z-index: 999;
+            display: none;
+        `;
+        document.body.appendChild(el);
+    });
 
     spawnGoldenBall();
     spawnEnemy();
@@ -152,7 +230,8 @@ const checkGoldenBallCollision = () => {
 const collectGoldenBall = () => {
     global.goldenBall.style.display = 'none';
     global.goldenBallVisible = false;
-    global.heroHP = 150;
+    global.heroHP = global.heroMaxHP;
+    updateHeroHPBar();
 
     if (global.powerUpTimer) clearTimeout(global.powerUpTimer);
 
@@ -178,6 +257,75 @@ const showPowerUpEffect = (active) => {
     global.hero.style.filter = active
         ? 'drop-shadow(0 0 8px gold) brightness(1.3)'
         : '';
+};
+
+// ─── Hero HP ──────────────────────────────────────────────────────────────
+
+const updateHeroHPBar = () => {
+    const pct = Math.max(0, global.heroHP / global.heroMaxHP) * 100;
+    global.heroHPFill.style.width = pct + '%';
+    global.heroHPLabel.textContent = `HP: ${Math.max(0, global.heroHP)}`;
+
+    if (pct > 60) global.heroHPFill.style.background = '#2ecc71';
+    else if (pct > 30) global.heroHPFill.style.background = '#f39c12';
+    else global.heroHPFill.style.background = '#e74c3c';
+
+    if (global.heroHP <= 0 && !global.isDead) heroDeath();
+};
+
+const heroDeath = () => {
+    global.isDead = true;
+    global.movingLeft = false;
+    global.movingRight = false;
+    global.isSwinging = false;
+    global.isJumping = false;
+    global.velocityY = 0;
+    global.sliding = false;
+    global.slidingCooldown = false;
+
+    if (global.powerUpTimer) clearTimeout(global.powerUpTimer);
+    global.powerUpActive = false;
+    global.speed = global.baseSpeed;
+    global.jumpForce = global.baseJumpForce;
+    global.heroDmg = 20;
+
+    global.hero.style.filter = 'grayscale(1) brightness(0.4)';
+    global.hero.style.transform = 'rotate(90deg)';
+
+    setTimeout(() => heroRespawn(), 2000);
+};
+
+const heroRespawn = () => {
+    // reset positie
+    global.heroX = window.innerWidth / 3;
+    global.heroY = 0;
+    global.worldOffset = 0;
+    global.offset = 0;
+    global.direction = 'right';
+
+    // reset HP
+    global.heroHP = global.heroMaxHP;
+    global.heroHitCooldown = false;
+    global.isDead = false;
+
+    // reset visueel
+    global.hero.style.filter = '';
+    global.hero.style.transform = 'scaleX(1)';
+    global.hero.style.width = '100px';
+    global.hero.src = global.RestImageSrc;
+
+    updateHeroHPBar();
+
+    // knippereffect om respawn aan te geven
+    let blinks = 0;
+    const blink = setInterval(() => {
+        global.hero.style.opacity = global.hero.style.opacity === '0' ? '1' : '0';
+        blinks++;
+        if (blinks >= 6) {
+            clearInterval(blink);
+            global.hero.style.opacity = '1';
+        }
+    }, 200);
 };
 
 // ─── Enemy ────────────────────────────────────────────────────────────────
@@ -229,6 +377,9 @@ const updateEnemyPosition = () => {
         const enemyScreenX = global.enemyWorldX - global.worldOffset;
         if (enemyScreenX > global.heroX + 5) global.enemyWorldX -= global.enemySpeed;
         else if (enemyScreenX < global.heroX - 5) global.enemyWorldX += global.enemySpeed;
+
+        const dist = Math.abs(enemyScreenX - global.heroX);
+        if (dist < 150) enemyPunch();
     }
 
     const screenX = global.enemyWorldX - global.worldOffset;
@@ -239,7 +390,52 @@ const updateEnemyPosition = () => {
     if (screenX < -200) killEnemy();
 };
 
-// Floating damage number
+const enemyPunch = () => {
+    if (!global.enemyVisible) return;
+    if (global.enemyIsSwinging) return;
+    if (global.isDead) return;
+
+    const enemyScreenX = global.enemyWorldX - global.worldOffset;
+
+    global.enemyIsSwinging = true;
+
+    global.enemy.style.filter = 'brightness(1.5)';
+    setTimeout(() => { global.enemy.style.filter = ''; }, 200);
+
+    const enemyLeft  = enemyScreenX + global.enemyHitboxOffsetX;
+    const enemyRight = enemyLeft + global.enemyHitboxWidth;
+    const heroLeft   = global.heroX + global.heroHitboxOffsetX;
+    const heroRight  = heroLeft + global.heroHitboxWidth;
+
+    const inRange =
+        heroLeft  < enemyRight &&
+        heroRight > enemyLeft  &&
+        global.heroY < global.enemyHitboxHeight;
+
+    if (inRange && !global.heroHitCooldown) {
+        global.heroHP -= global.enemyDmg;
+        updateHeroHPBar();
+        global.heroHitCooldown = true;
+
+        global.hero.style.filter = global.powerUpActive
+            ? 'drop-shadow(0 0 8px gold) brightness(1.3)'
+            : 'brightness(2) sepia(1) hue-rotate(300deg)';
+        setTimeout(() => {
+            if (!global.isDead) {
+                global.hero.style.filter = global.powerUpActive
+                    ? 'drop-shadow(0 0 8px gold) brightness(1.3)'
+                    : '';
+            }
+        }, 150);
+
+        setTimeout(() => { global.heroHitCooldown = false; }, 800);
+    }
+
+    setTimeout(() => { global.enemyIsSwinging = false; }, 500);
+};
+
+// ─── Floating damage number ───────────────────────────────────────────────
+
 const spawnDamageNumber = (screenX, damage) => {
     const el = document.createElement('div');
     el.textContent = `-${damage}`;
@@ -266,22 +462,58 @@ const spawnDamageNumber = (screenX, damage) => {
     setTimeout(() => el.remove(), 650);
 };
 
+// ─── Debug hitboxes ───────────────────────────────────────────────────────
+
+const updateDebugHitboxes = (enemyScreenX) => {
+    if (!global.debugHitboxes) {
+        global.debugEnemyBox.style.display = 'none';
+        global.debugHeroBox.style.display  = 'none';
+        return;
+    }
+
+    global.debugEnemyBox.style.display = global.enemyVisible ? 'block' : 'none';
+    global.debugEnemyBox.style.left    = (enemyScreenX + global.enemyHitboxOffsetX) + 'px';
+    global.debugEnemyBox.style.bottom  = '0px';
+    global.debugEnemyBox.style.width   = global.enemyHitboxWidth + 'px';
+    global.debugEnemyBox.style.height  = global.enemyHitboxHeight + 'px';
+
+    global.debugHeroBox.style.display = 'block';
+    global.debugHeroBox.style.left    = (global.heroX + global.heroHitboxOffsetX) + 'px';
+    global.debugHeroBox.style.bottom  = global.heroY + 'px';
+    global.debugHeroBox.style.width   = global.heroHitboxWidth + 'px';
+    global.debugHeroBox.style.height  = '100px';
+
+
+};
+
+// ─── Collision ────────────────────────────────────────────────────────────
+
 const checkEnemyCollision = () => {
     if (!global.enemyVisible) return;
+    if (global.isDead) return;
 
     const screenX = global.enemyWorldX - global.worldOffset;
-    const size = global.enemyWidth;
+
+    const enemyLeft   = screenX + global.enemyHitboxOffsetX;
+    const enemyRight  = enemyLeft + global.enemyHitboxWidth;
+    const enemyBottom = global.enemyHitboxHeight;
+
+    const heroLeft  = global.heroX + global.heroHitboxOffsetX;
+    const heroRight = heroLeft + global.heroHitboxWidth;
+
+    updateDebugHitboxes(screenX);
+
     const overlapping =
-        global.heroX < screenX + size &&
-        global.heroX + 100 > screenX &&
-        global.heroY < size;
+        heroLeft  < enemyRight  &&
+        heroRight > enemyLeft   &&
+        global.heroY < enemyBottom;
 
     if (!overlapping) {
         global.enemyHitThisSwing = false;
         return;
     }
 
-    if (global.isSwinging && !global.enemyHitThisSwing) {
+    if (global.isSwinging && !global.enemyHitThisSwing && checkPositionRelative()) {
         global.enemyHitThisSwing = true;
         global.enemyHP -= global.heroDmg;
         updateEnemyHPBar();
@@ -294,11 +526,20 @@ const checkEnemyCollision = () => {
 
         if (global.enemyHP < 1) killEnemy();
     }
+};
 
-    if (!global.heroHitCooldown) {
-        global.heroHP -= global.enemyDmg;
-        global.heroHitCooldown = true;
-        setTimeout(() => { global.heroHitCooldown = false; }, 800);
+// ─── Positie check ────────────────────────────────────────────────────────
+
+const checkPositionRelative = () => {
+    const enemyScreenX = global.enemyWorldX - global.worldOffset;
+
+    const enemyCenterX = enemyScreenX + global.enemyWidth / 2;
+    const heroCenterX  = global.SPRITE_CONTAINER_OFFSET + global.heroX + 50;
+
+    if (enemyCenterX < heroCenterX) {
+        return global.direction === 'left';
+    } else {
+        return global.direction === 'right';
     }
 };
 
@@ -312,79 +553,73 @@ const changeDirection = () => {
         global.rustImage.src = global.RestImageSrc;
         global.rustImage.style.transform = 'scaleX(1)';
     }
-    global.rustImage.style.width = '100px';
+    if (!global.sliding) global.rustImage.style.width = '100px';
 };
 
 // ─── Game Loop ────────────────────────────────────────────────────────────
 
 const script = () => {
-    // ─── Horizontale beweging ───
-    if (global.movingRight) {
-        global.direction = 'right';
-        if (!global.isSwinging) {
-            global.hero.src = global.RunImageSrc;
-            global.hero.style.width = '100px';
-            global.hero.style.transform = 'scaleX(1)';
+    if (!global.isDead) {
+        if (global.movingRight) {
+            global.direction = 'right';
+            if (!global.isSwinging && !global.sliding) {
+                global.hero.src = global.RunImageSrc;
+                global.hero.style.width = '100px';
+                global.hero.style.transform = 'scaleX(1)';
+            }
+            if (global.heroX < global.rightBound) global.heroX = Math.min(global.heroX + global.speed, global.rightBound);
+            else {
+                global.heroX = global.rightBound;
+                global.worldOffset += global.speed;
+                global.offset = global.worldOffset % global.tileWidth;
+            }
         }
-        if (global.heroX < global.rightBound) global.heroX = Math.min(global.heroX + global.speed, global.rightBound);
-        else {
-            global.heroX = global.rightBound;
-            global.worldOffset += global.speed;
-            global.offset = global.worldOffset % global.tileWidth;
+
+        if (global.movingLeft) {
+            global.direction = 'left';
+            if (!global.isSwinging && !global.sliding) {
+                global.hero.src = global.RunLeftImageSrc;
+                global.hero.style.width = '100px';
+                global.hero.style.transform = 'scaleX(-1)';
+            }
+            if (global.heroX > global.leftBound) global.heroX -= global.speed;
+            else {
+                global.worldOffset -= global.speed;
+                global.offset = ((global.worldOffset % global.tileWidth) + global.tileWidth) % global.tileWidth;
+            }
         }
-    }
 
-    if (global.movingLeft) {
-        global.direction = 'left';
-        if (!global.isSwinging) {
-            global.hero.src = global.RunLeftImageSrc;
-            global.hero.style.transform = 'scaleX(-1)';
+        if (global.movingDown) {
+            if ((global.movingLeft || global.movingRight) && !global.sliding && !global.slidingCooldown) {
+                global.sliding = true;
+                global.hero.style.width = '50px';
+                global.slidingCooldown = true;
+                global.speed += 5;
+
+                setTimeout(() => {
+                    global.speed -= 5;
+                    global.sliding = false;
+                    global.hero.style.width = '100px';
+                }, 500);
+
+                setTimeout(() => {
+                    global.slidingCooldown = false;
+                }, 1000);
+            }
         }
-        if (global.heroX > global.leftBound) global.heroX -= global.speed;
-        else {
-            global.worldOffset -= global.speed;
-            global.offset = ((global.worldOffset % global.tileWidth) + global.tileWidth) % global.tileWidth;
+
+        if (!global.movingLeft && !global.movingRight && !global.isSwinging) {
+            changeDirection();
         }
-    }
 
-    // ─── Sliding / Crouch ───
-    // ─── Sliding / Crouch ───
-    if (global.movingDown) {
-        if ((global.movingLeft || global.movingRight) && !global.sliding && !global.slidingCooldown) {
-            global.sliding = true;
-            global.slidingCooldown = true; // start cooldown
-            global.speed += 5;
-            console.log("Sliding gestart, speed:", global.speed);
-
-            setTimeout(() => {
-                global.speed -= 5;
-                global.sliding = false;
-                console.log("Sliding afgelopen, speed terug:", global.speed);
-            }, 500); // sliding duration
-
-            // reset cooldown na 1 seconde
-            setTimeout(() => {
-                global.slidingCooldown = false;
-                console.log("Sliding is weer beschikbaar");
-            }, 1000);
-        } else if (!global.movingLeft && !global.movingRight) {
-            console.log("Crouch");
-        }
-    }
-
-    // ─── Idle richting ───
-    if (!global.movingLeft && !global.movingRight && !global.isSwinging) {
-        changeDirection();
-    }
-
-    // ─── Springen ───
-    if (global.isJumping) {
-        global.velocityY += global.gravity;
-        global.heroY -= global.velocityY;
-        if (global.heroY <= 0) {
-            global.heroY = 0;
-            global.velocityY = 0;
-            global.isJumping = false;
+        if (global.isJumping) {
+            global.velocityY += global.gravity;
+            global.heroY -= global.velocityY;
+            if (global.heroY <= 0) {
+                global.heroY = 0;
+                global.velocityY = 0;
+                global.isJumping = false;
+            }
         }
     }
 
@@ -404,6 +639,7 @@ const script = () => {
 
 const jump = () => {
     if (global.isJumping) return;
+    if (global.isDead) return;
     global.isJumping = true;
     global.velocityY = global.jumpForce;
 };
@@ -412,6 +648,7 @@ const jump = () => {
 
 const punch = () => {
     if (global.isSwinging) return;
+    if (global.isDead) return;
 
     global.isSwinging = true;
     global.enemyHitThisSwing = false;
@@ -433,7 +670,7 @@ const punch = () => {
         } else {
             changeDirection();
         }
-        global.hero.style.width = '100px';
+        global.hero.style.width = global.sliding ? '50px' : '100px';
         global.isSwinging = false;
     }, 200);
 };
@@ -445,6 +682,10 @@ document.addEventListener('keydown', (e) => {
     if (e.code === 'KeyA') global.movingLeft = true;
     if (e.code === 'Space') jump();
     if (e.code === 'KeyS') global.movingDown = true;
+    if (e.code === 'KeyH') {
+        global.debugHitboxes = !global.debugHitboxes;
+        console.log("Debug hitboxes:", global.debugHitboxes ? 'aan' : 'uit');
+    }
 });
 
 document.addEventListener('keyup', (e) => {

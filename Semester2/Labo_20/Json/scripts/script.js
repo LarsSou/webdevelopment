@@ -26,5 +26,6 @@ let setup =()=>{
 }
 
 //DE ISOstring wordt gebruikt voor een "date" object
-//alsje meermaals dezelfde naam gebruikt wordt het 2 genomen
+//als je meermaals dezelfde naam gebruikt wordt het 2 genomen
+
 window.addEventListener("load", setup);
