@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f792014e-9d93-41dc-8399-dbb73b14393f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/script/homeMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/style/homeStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester2/Labo_20/Json/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/Labo_20/Json/scripts/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester2/extra_game/script/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/extra_game/script/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semester2/extra_game/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/extra_game/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semester2/extra_game/script/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/extra_game/script/gameScript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semester2/extra_game/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/extra_game/style/gameStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +21,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTTP Request" />
+        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="CSS File" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -51,47 +53,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;HTTP Request.l | GET request to example server.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.array.html.executor&quot;: &quot;Debug&quot;,
-    &quot;JavaScript Debug.dialoog.html.executor&quot;: &quot;Debug&quot;,
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Debug&quot;,
-    &quot;JavaScript Debug.innerhtml.html.executor&quot;: &quot;Debug&quot;,
-    &quot;JavaScript Debug.innerhtmlAanpassing.html.executor&quot;: &quot;Debug&quot;,
-    &quot;JavaScript Debug.kopieer.html.executor&quot;: &quot;Debug&quot;,
-    &quot;JavaScript Debug.substring.html.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Node.js.arrays.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.code.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.dialoogvenster.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.index.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.innerhtmlAanpassing.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.movement.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.script.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.searchScript.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.substring.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.validatie.js.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/lars-sou/Schoolwerk/WebDev/Github/webdevelopment/Semester2/Labo_20/Json&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "HTTP Request.l | GET request to example server.executor": "Run",
+    "JavaScript Debug.array.html.executor": "Debug",
+    "JavaScript Debug.dialoog.html.executor": "Debug",
+    "JavaScript Debug.index.html.executor": "Debug",
+    "JavaScript Debug.innerhtml.html.executor": "Debug",
+    "JavaScript Debug.innerhtmlAanpassing.html.executor": "Debug",
+    "JavaScript Debug.kopieer.html.executor": "Debug",
+    "JavaScript Debug.substring.html.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.arrays.js.executor": "Debug",
+    "Node.js.code.js.executor": "Run",
+    "Node.js.dialoogvenster.js.executor": "Debug",
+    "Node.js.homeMenu.js.executor": "Debug",
+    "Node.js.index.js.executor": "Debug",
+    "Node.js.innerhtmlAanpassing.js.executor": "Debug",
+    "Node.js.movement.js.executor": "Debug",
+    "Node.js.script.js.executor": "Debug",
+    "Node.js.searchScript.js.executor": "Debug",
+    "Node.js.substring.js.executor": "Debug",
+    "Node.js.validatie.js.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/lars-sou/Schoolwerk/WebDev/Github/webdevelopment/Semester2/Labo_20/Json",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Semester2/Labo_20/Json" />
@@ -160,7 +163,8 @@
       <workItem from="1774618699345" duration="2000" />
       <workItem from="1774618717856" duration="1000" />
       <workItem from="1774871862436" duration="8852000" />
-      <workItem from="1775110726944" duration="3480000" />
+      <workItem from="1775110726944" duration="4390000" />
+      <workItem from="1775206988733" duration="3528000" />
     </task>
     <servers />
   </component>

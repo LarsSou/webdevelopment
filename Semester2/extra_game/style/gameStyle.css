@@ -40,3 +40,16 @@ body {
     position: absolute;
     margin-bottom: 100px;
 }
+.coin{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: gold;
+    border: 2px solid #b8860b;
+    border-radius: 50%;
+    bottom: 120px;
+    z-index: 500;
+    box-shadow: 0 0 6px orange;
+    transition: bottom 0.4s ease-out;
+
+}

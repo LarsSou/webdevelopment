@@ -43,7 +43,8 @@ const global = {
 
     goldenBallVisible: false,
     goldenBallWorldX: 0,
-    
+
+    coin : null,
 
     // ── Enemy ──
     enemy: null,
@@ -82,6 +83,10 @@ const global = {
     heroHPBar: null,
     heroHPFill: null,
     heroHPLabel: null,
+
+
+
+    enemysKilled: 0,
 };
 
 // ─── Setup ───────────────────────────────────────────────────────────────
@@ -132,7 +137,7 @@ const setup = () => {
     global.heroHPBar = document.createElement('div');
     global.heroHPBar.style.cssText = `
         position: fixed;
-        top: 20px;
+        top: 40px;
         left: 20px;
         width: 200px;
         height: 18px;
@@ -156,7 +161,7 @@ const setup = () => {
     global.heroHPLabel.textContent = `HP: ${global.heroHP}`;
     global.heroHPLabel.style.cssText = `
         position: fixed;
-        top: 22px;
+        top: 42px;
         left: 228px;
         color: white;
         font-family: sans-serif;
@@ -186,7 +191,7 @@ const setup = () => {
 
     spawnGoldenBall();
     spawnEnemy();
-    script();
+    gameScript();
 };
 
 // ─── Element creation ─────────────────────────────────────────────────────
@@ -220,7 +225,7 @@ const checkGoldenBallCollision = () => {
     const ballSize = 20;
     if (
         global.heroX < screenX + ballSize &&
-        global.heroX + 100 > screenX &&
+        global.heroX + 250 > screenX &&
         global.heroY < ballSize + 10
     ) {
         collectGoldenBall();
@@ -350,11 +355,106 @@ const killEnemy = () => {
     global.enemy.style.opacity = '0';
     global.enemyHPBar.style.display = 'none';
 
+    spawnCoin(global.enemyWorldX); // ← positie meegeven vóór de timeout
+
     setTimeout(() => {
         global.enemy.style.display = 'none';
         global.enemyHP = global.enemyMaxHP;
         setTimeout(spawnEnemy, 2000);
     }, 400);
+
+
+}
+// ─── Coin ─────────────────────────────────────────────────────────────────
+
+const spawnCoin = (worldX) => {
+    const coin = document.createElement('div');
+    coin.classList.add('coin');
+    document.body.appendChild(coin);
+
+    // Sla de world X op in het element zelf
+    coin._worldX = worldX;
+    global.coins = global.coins || [];
+    global.coins.push(coin);
+
+    // Bounce animatie omhoog dan naar beneden
+    setTimeout(() => { coin.style.bottom = '120px'; }, 50);
+
+};
+
+const updateCoins = () => {
+    if (!global.coins || global.coins.length === 0) return;
+
+    global.coins = global.coins.filter(coin => {
+        const screenX = coin._worldX - global.worldOffset;
+        coin.style.left = screenX + 'px';
+
+        if (screenX < -100 || screenX > window.innerWidth + 100) {
+            coin.remove();
+            return false;
+        }
+
+        // Collision met hero
+        const coinSize = 24;
+        if (
+            global.heroX < screenX + coinSize &&
+            global.heroX + 250 > screenX &&
+            global.heroY < coinSize + 30
+        ) {
+            collectCoin(coin);
+            return false;
+        }
+
+        return true;
+    });
+};
+
+const collectCoin = (coin) => {
+    coin.remove();
+    global.coinCount = (global.coinCount || 0) + 1;
+    updateCoinUI();
+
+    // Kort flash effect
+    const flash = document.createElement('div');
+    flash.textContent = '+1 🪙';
+    flash.style.cssText = `
+        position: fixed;
+        left: ${global.heroX}px;
+        bottom: 120px;
+        color: gold;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: sans-serif;
+        text-shadow: 0 0 4px #000;
+        pointer-events: none;
+        z-index: 1000;
+        transition: bottom 0.5s, opacity 0.5s;
+    `;
+    document.body.appendChild(flash);
+    requestAnimationFrame(() => {
+        flash.style.bottom = '160px';
+        flash.style.opacity = '0';
+    });
+    setTimeout(() => flash.remove(), 550);
+};
+
+const updateCoinUI = () => {
+    if (!global.coinLabel) {
+        global.coinLabel = document.createElement('div');
+        global.coinLabel.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            color: gold;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: sans-serif;
+            text-shadow: 0 0 4px #000;
+            z-index: 1000;
+        `;
+        document.body.appendChild(global.coinLabel);
+    }
+    global.coinLabel.textContent = `🪙 ${global.coinCount}`;
 };
 
 const updateEnemyHPBar = () => {
@@ -558,7 +658,7 @@ const changeDirection = () => {
 
 // ─── Game Loop ────────────────────────────────────────────────────────────
 
-const script = () => {
+const gameScript = () => {
     if (!global.isDead) {
         if (global.movingRight) {
             global.direction = 'right';
@@ -632,7 +732,9 @@ const script = () => {
     updateEnemyPosition();
     checkEnemyCollision();
 
-    requestAnimationFrame(script);
+    requestAnimationFrame(gameScript);
+    updateCoins();
+
 };
 
 // ─── Jump ─────────────────────────────────────────────────────────────────
