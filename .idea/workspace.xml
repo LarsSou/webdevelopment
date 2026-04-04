@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f792014e-9d93-41dc-8399-dbb73b14393f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/script/homeMenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/style/homeStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/sounds/GrassWalking.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/sounds/coinClaimed.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/sounds/dying.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/sounds/punch.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester2/extra_game/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/extra_game/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester2/extra_game/script/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/extra_game/script/gameScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester2/extra_game/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/extra_game/style/gameStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semester2/extra_game/script/gameScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/extra_game/script/gameScript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semester2/extra_game/script/homeMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/extra_game/script/homeMenu.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +85,7 @@
     "git-widget-placeholder": "main",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/lars-sou/Schoolwerk/WebDev/Github/webdevelopment/Semester2/Labo_20/Json",
+    "last_opened_file_path": "/Users/lars-sou/Schoolwerk/WebDev/Github/webdevelopment/Semester2/extra_game/sounds",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -97,18 +98,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Semester2/extra_game/sounds" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_20/Json" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_20/Contactmanager" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_19/matching_game/images" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_19/matching_game" />
-      <recent name="$PROJECT_DIR$/Semester2/Labo_18" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Semester2/extra_game/sounds" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_20" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_20/contactManager" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_20/Contactmanager" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_20/Dagen_Op_De_Wereldbol/style" />
-      <recent name="$PROJECT_DIR$/Semester2/Labo_20/Dagen_Op_De_Wereldbol/scripts" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -164,7 +165,8 @@
       <workItem from="1774618717856" duration="1000" />
       <workItem from="1774871862436" duration="8852000" />
       <workItem from="1775110726944" duration="4390000" />
-      <workItem from="1775206988733" duration="3528000" />
+      <workItem from="1775206988733" duration="4361000" />
+      <workItem from="1775332478283" duration="2068000" />
     </task>
     <servers />
   </component>

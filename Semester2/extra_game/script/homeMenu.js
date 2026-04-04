@@ -30,10 +30,11 @@ const messageStats = () => {
 
     if(global.coinCount == null){global.coinCount = 0; console.log("con moet mqf"); }
 
-    return"Max HP:" + global.heroMaxHP + "\n"+
-           "HP: " + global.heroHP + "\n" +
-           "Dmg: " + global.heroDmg + "\n" +
-           "Coins amount: " + global.coinCount;
+    return"Max HP:" + hero.maxHP + "\n"+
+           "HP: " + hero.hp + "\n" +
+           "Dmg: " + hero.dmg + "\n" +
+           "Coins amount: " + global.coinCount + "\n" +
+           "Enemy's killed: " + global.enemysKilled;
 }
 window.addEventListener("load", setupHome);
 
