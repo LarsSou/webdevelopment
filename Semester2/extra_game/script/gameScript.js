@@ -42,7 +42,6 @@ const global = {
     debugHitboxes: false,
     debugEnemyBox: null,
     debugHeroBox: null,
-
     enemysKilled: 0,
 };
 
@@ -224,6 +223,8 @@ const checkGoldenBallCollision = () => {
 };
 
 const collectGoldenBall = () => {
+
+    global.goldenBallClaimed = true;
     global.goldenBall.style.display = 'none';
     global.goldenBallVisible = false;
 
@@ -234,9 +235,11 @@ const collectGoldenBall = () => {
     let powerUpEffectSound = new Audio("sounds/powerUp.mp3")
     powerUpEffectSound.play();
     hero.powerUpActive = true;
-    hero.speed = hero.baseSpeed + 2;
-    hero.jumpForce = hero.baseJumpForce * 2;
-    hero.dmg = hero.boostedDmg;
+        hero.speed = hero.baseSpeed + 2;
+        hero.jumpForce = hero.baseJumpForce * 2;
+        hero.dmg = hero.boostedDmg;
+
+
     showPowerUpEffect(true);
 
     hero.powerUpTimer = setTimeout(() => {
@@ -250,6 +253,7 @@ const collectGoldenBall = () => {
     }, 5000);
 
     setTimeout(spawnGoldenBall, Math.random() * 10000);
+
 };
 
 const showPowerUpEffect = (active) => {
@@ -316,9 +320,10 @@ const heroRespawn = () => {
 // ─── Enemy ────────────────────────────────────────────────────────────────
 
 const spawnEnemy = () => {
-    let randomNumber = Math.floor(Math.random() * 5);
-    if(Math.floor(Math.random() * 5) === randomNumber) {
-        enemy.hp = enemy.maxHP*Math.floor(Math.random() * 5);
+    let randomNumber = Math.floor(Math.random() * 2);
+
+    if(Math.floor(Math.random() * 2) === randomNumber) {
+        enemy.hp = 50 * Math.floor(Math.random() * 5);
     }
     else{
         enemy.hp = enemy.maxHP;
@@ -592,9 +597,12 @@ const gameLoop = () => {
             hero.sliding = true;
             hero.el.style.width = '50px';
             hero.slidingCooldown = true;
-            hero.speed += 5;
+            if(!hero.powerUpActive){
+                hero.speed += 5;
+            }
 
-            setTimeout(() => { hero.speed -= 5; hero.sliding = false; hero.el.style.width = '100px'; }, 500);
+
+            setTimeout(() => { if(!hero.powerUpActive) {hero.speed -= 5; }hero.sliding = false; hero.el.style.width = '100px'; }, 500);
             setTimeout(() => { hero.slidingCooldown = false; }, 1000);
         }
 
@@ -672,3 +680,4 @@ document.addEventListener('keyup', (e) => {
     if (e.code === 'KeyA') global.movingLeft  = false;
     if (e.code === 'KeyS') global.movingDown  = false;
 });
+

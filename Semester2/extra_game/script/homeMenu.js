@@ -4,14 +4,16 @@ const globalHome = {
     gameScreen: null,
 }
 
-window.addEventListener("load", () => {
+const setupHome = () => {
+
     globalHome.start      = document.getElementById("startButton");
     globalHome.stats      = document.getElementById("statsButton");
     globalHome.gameScreen = document.getElementById("gameScreen");
 
     globalHome.start.addEventListener("click", startGame);
     globalHome.stats.addEventListener("click", vieuwStats);
-});
+};
+
 
 const startGame = () => {
     document.getElementById("homeScreen").style.display = "none";
@@ -30,3 +32,5 @@ const messageStats = () => {
         "Coins: "          + global.coinCount     + "\n" +
         "Enemies killed: " + global.enemysKilled;
 };
+
+window.addEventListener("load", setupHome);
