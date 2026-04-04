@@ -5,7 +5,6 @@ sound.loop = true;
 
 const startMusic = () => {
     sound.play().catch(() => {
-        // Autoplay geblokkeerd — wacht op eerste interactie
         const unlock = () => {
             sound.play();
             window.removeEventListener('click', unlock);
@@ -19,7 +18,7 @@ const startMusic = () => {
 // ─── State objecten ───────────────────────────────────────────────────────
 
 const global = {
-    ground: document.querySelector('.ground'),
+    ground: null,
 
     SPRITE_CONTAINER_OFFSET: 200,
     tileWidth: 500,
@@ -48,9 +47,9 @@ const global = {
 };
 
 const hero = {
-    el: document.querySelector('.hero'),
+    el: null,
 
-    x: window.innerWidth / 3,
+    x: 0,
     y: 0,
     velocityY: 0,
     gravity: 0.8,
@@ -79,11 +78,9 @@ const hero = {
     leftBound: 200,
     rightBound: 0,
 
-    // Hitbox
     hitboxOffsetX: 180,
     hitboxWidth: 150,
 
-    // Sprites
     src: {
         rest:     'images/hero_rust.png',
         restLeft: 'images/hero_rust.png',
@@ -92,7 +89,6 @@ const hero = {
         runLeft:  'images/hero_rust.png',
     },
 
-    // HP UI
     hpBar: null,
     hpFill: null,
     hpLabel: null,
@@ -113,12 +109,10 @@ const enemy = {
     knockback: 0,
     isSwinging: false,
 
-    // Hitbox
     hitboxOffsetX: -15,
     hitboxWidth: 150,
     hitboxHeight: 100,
 
-    // HP UI
     hpBar: null,
     hpFill: null,
 };
@@ -126,9 +120,13 @@ const enemy = {
 // ─── Setup ────────────────────────────────────────────────────────────────
 
 const setup = () => {
+    global.ground = document.querySelector('.ground');
+    hero.el       = document.querySelector('.hero');
+    hero.x        = window.innerWidth / 3;
+    hero.rightBound = window.innerWidth - hero.leftBound - hero.x;
+
     startMusic();
 
-    hero.rightBound = window.innerWidth - hero.leftBound - hero.x;
     hero.el.style.cssText = 'position:absolute; width:100px; bottom:0px;';
 
     global.goldenBall = createElement('goldenBall');
@@ -139,6 +137,8 @@ const setup = () => {
 
     spawnGoldenBall();
     spawnEnemy();
+
+    window.addEventListener('click', punch); // ← pas hier toevoegen
     gameLoop();
 };
 
@@ -206,7 +206,7 @@ const setupDebugBoxes = () => {
 
 const spawnGoldenBall = () => {
     if (global.goldenBallVisible) return;
-    const dist = 300 + Math.random() * 1200;
+    const dist = 300 + Math.random() * 2*(Math.random() * 1234);
     global.goldenBallWorldX = global.worldOffset + window.innerWidth + dist;
     global.goldenBall.style.display = 'block';
     global.goldenBallVisible = true;
@@ -231,7 +231,8 @@ const collectGoldenBall = () => {
     updateHeroHPBar();
 
     if (hero.powerUpTimer) clearTimeout(hero.powerUpTimer);
-
+    let powerUpEffectSound = new Audio("sounds/powerUp.mp3")
+    powerUpEffectSound.play();
     hero.powerUpActive = true;
     hero.speed = hero.baseSpeed + 2;
     hero.jumpForce = hero.baseJumpForce * 2;
@@ -239,6 +240,8 @@ const collectGoldenBall = () => {
     showPowerUpEffect(true);
 
     hero.powerUpTimer = setTimeout(() => {
+        let powerUpEffectReleasedSound = new Audio("sounds/powerDown.mp3");
+        powerUpEffectReleasedSound.play();
         hero.speed = hero.baseSpeed;
         hero.jumpForce = hero.baseJumpForce;
         hero.dmg = 20;
@@ -264,7 +267,7 @@ const updateHeroHPBar = () => {
 };
 
 const heroDeath = () => {
-    let dyingSound = new Audio("sounds/dying.mp3")
+    let dyingSound = new Audio("sounds/dying.mp3");
     dyingSound.play();
     hero.isDead = true;
     hero.isSwinging = false;
@@ -313,7 +316,14 @@ const heroRespawn = () => {
 // ─── Enemy ────────────────────────────────────────────────────────────────
 
 const spawnEnemy = () => {
-    enemy.hp = enemy.maxHP;
+    let randomNumber = Math.floor(Math.random() * 5);
+    if(Math.floor(Math.random() * 5) === randomNumber) {
+        enemy.hp = enemy.maxHP*Math.floor(Math.random() * 5);
+    }
+    else{
+        enemy.hp = enemy.maxHP;
+    }
+
     enemy.knockback = 0;
     enemy.worldX = global.worldOffset + window.innerWidth + 300 + Math.random() * 1200;
     enemy.visible = true;
@@ -618,14 +628,14 @@ const jump = () => {
     hero.velocityY = hero.jumpForce;
 };
 
-const punch = () => {
-
-    if (hero.isSwinging || hero.isDead) return;
+const punch = (e) => {
+    if (e.target.closest('button')) return; // ← knoppen worden genegeerd
+    if (!hero.el || hero.isSwinging || hero.isDead) return;
     hero.isSwinging = true;
     enemy.hitThisSwing = false;
     hero.el.src = hero.src.punch;
-    const punchSound= new Audio("sounds/punch.mp3");
-    punchSound.play()
+    const punchSound = new Audio("sounds/punch.mp3");
+    punchSound.play();
     hero.el.style.width = '175px';
     hero.el.style.transform = hero.direction === 'left' ? 'scaleX(-1) translateY(35px)' : 'translateY(35px)';
 
@@ -662,6 +672,3 @@ document.addEventListener('keyup', (e) => {
     if (e.code === 'KeyA') global.movingLeft  = false;
     if (e.code === 'KeyS') global.movingDown  = false;
 });
-
-window.addEventListener('click', punch);
-window.addEventListener('load', setup);

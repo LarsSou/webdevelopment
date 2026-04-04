@@ -1,0 +1,19 @@
+.button{
+    background-color: green;
+    color: white;
+    font-size: 2em;
+    margin: 0 auto;
+    width: 150px;
+    height: 50px;
+}
+.button:first-child{
+    margin-bottom: 10px;
+}
+#homeScreen{
+    padding-left: 45%;
+    padding-right: 55%;
+    padding-top: 20%;
+}
+#gameScreen {
+    display: none;
+}

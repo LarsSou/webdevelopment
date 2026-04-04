@@ -1,42 +1,32 @@
-const buttons = {
-    playground: document.body,
-    start: document.createElement("button"),
-    stats: document.createElement("button"),
+const globalHome = {
+    start: null,
+    stats: null,
+    gameScreen: null,
 }
 
-const setupHome = () => {
-    buttons.start.textContent = "Start";
-    buttons.start.id = "startBtn";
+window.addEventListener("load", () => {
+    globalHome.start      = document.getElementById("startButton");
+    globalHome.stats      = document.getElementById("statsButton");
+    globalHome.gameScreen = document.getElementById("gameScreen");
 
-    buttons.stats.textContent = "Stats";
-    buttons.stats.id = "statsBtn";
-
-    buttons.playground.append(buttons.start);
-    buttons.playground.append(buttons.stats);
-};
+    globalHome.start.addEventListener("click", startGame);
+    globalHome.stats.addEventListener("click", vieuwStats);
+});
 
 const startGame = () => {
-    console.log("Starting game...");
-    console.log(buttons.start.id);
+    document.getElementById("homeScreen").style.display = "none";
+    globalHome.gameScreen.style.display = "block";
+    setup(); // komt uit gameScript.js
 };
+
 const vieuwStats = () => {
+    alert(messageStats());
+};
 
-    console.log("Reviewing stats...");
-    console.log(buttons.stats.id);
-
-    alert(messageStats())
-}
 const messageStats = () => {
-
-    if(global.coinCount == null){global.coinCount = 0; console.log("con moet mqf"); }
-
-    return"Max HP:" + hero.maxHP + "\n"+
-           "HP: " + hero.hp + "\n" +
-           "Dmg: " + hero.dmg + "\n" +
-           "Coins amount: " + global.coinCount + "\n" +
-           "Enemy's killed: " + global.enemysKilled;
-}
-window.addEventListener("load", setupHome);
-
-buttons.start.addEventListener("click", startGame);
-buttons.stats.addEventListener("click", vieuwStats);
+    return "Max HP: "         + hero.maxHP          + "\n" +
+        "HP: "             + hero.hp              + "\n" +
+        "Dmg: "            + hero.dmg             + "\n" +
+        "Coins: "          + global.coinCount     + "\n" +
+        "Enemies killed: " + global.enemysKilled;
+};

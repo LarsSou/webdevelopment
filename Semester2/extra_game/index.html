@@ -8,12 +8,19 @@
 </head>
 <body>
 
-
-<div class="ground"></div>
-<div class="sprite-container">
-    <img class="hero" src="images/hero_rust.png" alt="sprite">
+<div id="homeScreen">
+    <button class="button" id="startButton">Play</button>
+    <button class="button" id="statsButton">Stats</button>
 </div>
 
+<div id="gameScreen">
+    <div class="ground"></div>
+    <div class="sprite-container">
+        <img class="hero" src="images/hero_rust.png" alt="sprite">
+    </div>
+</div>
+
+<!-- Scripts altijd onderaan body, na alle HTML elementen -->
 <script src="script/homeMenu.js"></script>
 <script src="script/gameScript.js"></script>
 
