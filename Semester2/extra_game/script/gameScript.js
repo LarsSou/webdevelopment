@@ -320,9 +320,9 @@ const heroRespawn = () => {
 // ─── Enemy ────────────────────────────────────────────────────────────────
 
 const spawnEnemy = () => {
-    let randomNumber = Math.floor(Math.random() * 2);
+    let randomNumber = Math.floor(Math.random() * 5);
 
-    if(Math.floor(Math.random() * 2) === randomNumber) {
+    if(Math.floor(Math.random() * 5) === randomNumber) {
         enemy.hp = 50 * Math.floor(Math.random() * 5);
     }
     else{
