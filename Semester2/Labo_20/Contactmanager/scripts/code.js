@@ -36,6 +36,7 @@ const bewaarBewerktePersoon = () => {
             global.LIJST_PERSONEN[global.OBJECT_INDEX].geboortedatum = document.getElementById("txtGeboorteDatum").value;
             global.LIJST_PERSONEN[global.OBJECT_INDEX].email = document.getElementById("txtEmail").value;
             global.LIJST_PERSONEN[global.OBJECT_INDEX].aantalKinderen = document.getElementById("txtAantalKinderen").value;
+
             let lstPersonen = document.getElementById("lstPersonen");
             let oldChild = lstPersonen[global.OBJECT_INDEX].childNodes[0];
             lstPersonen[global.OBJECT_INDEX].removeChild(oldChild);

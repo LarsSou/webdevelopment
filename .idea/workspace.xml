@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f792014e-9d93-41dc-8399-dbb73b14393f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/script/upgrade.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Semester2/extra_game/style/upgradeStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester2/extra_game/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/extra_game/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester2/extra_game/script/gameScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/extra_game/script/gameScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester2/extra_game/script/homeMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/extra_game/script/homeMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Semester2/extra_game/style/homeStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/extra_game/style/homeStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semester2/Labo_20/Contactmanager/scripts/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/Labo_20/Contactmanager/scripts/code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semester2/Labo_21/Colorpicker_Pro/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/Labo_21/Colorpicker_Pro/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semester2/Labo_21/Colorpicker_Pro/scripts/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/Labo_21/Colorpicker_Pro/scripts/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +64,7 @@
     &quot;JavaScript Debug.substring.html.executor&quot;: &quot;Debug&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;Node.js.arrays.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.code.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.code.js.executor&quot;: &quot;Debug&quot;,
     &quot;Node.js.dialoogvenster.js.executor&quot;: &quot;Debug&quot;,
     &quot;Node.js.gameScript.js.executor&quot;: &quot;Debug&quot;,
     &quot;Node.js.homeMenu.js.executor&quot;: &quot;Debug&quot;,
@@ -87,7 +84,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/lars-sou/Schoolwerk/WebDev/Github/webdevelopment/Semester2/extra_game/sounds&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/lars-sou/Schoolwerk/WebDev/Github/webdevelopment/Semester2/Labo_21/Colorpicker_Pro&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -100,11 +97,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Semester2/Labo_21/Colorpicker_Pro" />
       <recent name="$PROJECT_DIR$/Semester2/extra_game/sounds" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_20/Json" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_20/Contactmanager" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_19/matching_game/images" />
-      <recent name="$PROJECT_DIR$/Semester2/Labo_19/matching_game" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Semester2/extra_game/sounds" />
@@ -178,6 +175,10 @@
       <workItem from="1775898103923" duration="223000" />
       <workItem from="1776760525061" duration="34000" />
       <workItem from="1776760564923" duration="2000" />
+      <workItem from="1776771459457" duration="803000" />
+      <workItem from="1776775667908" duration="2194000" />
+      <workItem from="1776778012357" duration="2858000" />
+      <workItem from="1776781871009" duration="532000" />
     </task>
     <servers />
   </component>

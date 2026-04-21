@@ -6,7 +6,7 @@ const setup = () => {
     let clear = document.getElementById('clearButton');
     clear.addEventListener('click', clearBtn);
     btnSave.textContent = "Save";
-    pClear.prepend(btnSave)
+    pClear.prepend(btnSave);
     btnSave.addEventListener("click", save);
 
     for (let i = 0; i < sliders.length; i++) {
@@ -26,7 +26,20 @@ const setup = () => {
     let colors = JSON.parse(localStorage.getItem("colors")) || [];
     colors.forEach(color => createPreview(color.R, color.G, color.B));
 };
-
+const colorExists = (valueR, valueG, valueB) => {
+    let previews = document.getElementsByClassName("color-preview");
+    for (let preview of previews) {
+        if (
+            preview.dataset.r === valueR &&
+            preview.dataset.g === valueG &&
+            preview.dataset.b === valueB
+        )
+        {  
+            return true;
+        }
+    }
+    return false;
+};
 const update = () => {
     let sliders = document.getElementsByClassName("slider");
 
@@ -53,6 +66,10 @@ const save = () => {
     let valueR = sliders[0].value;
     let valueG = sliders[1].value;
     let valueB = sliders[2].value;
+
+    if (colorExists(valueR, valueG, valueB)) {
+        return;
+    }
 
     let colors = JSON.parse(localStorage.getItem("colors")) || [];
     colors.push({ R: valueR, G: valueG, B: valueB });
@@ -109,19 +126,17 @@ const remove = (event) => {
 
     preview.remove();
 };
+
 const clearBtn = () => {
     localStorage.clear();
 
-    // Verwijder alle opgeslagen kleur-previews uit de DOM
     document.querySelectorAll(".color-preview").forEach(el => el.remove());
 
-    // Reset de sliders naar 0
     let sliders = document.getElementsByClassName("slider");
     sliders[0].value = 255;
     sliders[1].value = 0;
     sliders[2].value = 0;
 
-    // Update de weergave
     update();
 };
 
