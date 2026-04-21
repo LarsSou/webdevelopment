@@ -5,12 +5,33 @@
     <title>Title</title>
     <link rel="stylesheet" href="style/homeStyle.css">
     <link rel="stylesheet" href="style/gameStyle.css">
+    <link rel="stylesheet" href="style/upgradeStyle.css">
 </head>
 <body>
 
 <div id="homeScreen">
     <button class="button" id="startButton">Play</button>
     <button class="button" id="statsButton">Stats</button>
+    <button class="button" id="upgradeButton">Upgrade</button>
+</div>
+
+<div id="upgradeScreen">
+    <label>Speed: </label>
+    <button class="speed" id="speed-down"> - </button>
+    <span id="speed-value">0</span>
+    <button class="speed" id="speed-up"> + </button>
+    <br>
+    <label>HP: </label>
+    <button class="hp" id="hp-down"> - </button>
+    <span id="hp-value">0</span>
+    <button class="hp" id="hp-up"> + </button>
+    <br>
+    <label>DMG:</label>
+    <button class="dmg" id="dmg-down"> - </button>
+    <span id="dmg-value">0</span>
+    <button class="dmg" id="dmg-up"> + </button>
+
+    <button id="backButton">←</button>
 </div>
 
 <div id="gameScreen">
@@ -18,11 +39,14 @@
     <div class="sprite-container">
         <img class="hero" src="images/hero_rust.png" alt="sprite">
     </div>
+
 </div>
 
-<!-- Scripts altijd onderaan body, na alle HTML elementen -->
+
 <script src="script/homeMenu.js"></script>
 <script src="script/gameScript.js"></script>
+<script src="script/upgrade.js"></script>
+
 
 </body>
 </html>

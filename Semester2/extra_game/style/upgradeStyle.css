@@ -1,0 +1,57 @@
+#upgradeScreen {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a1a2e;
+    border: 2px solid #4CAF50;
+    border-radius: 12px;
+    padding: 30px 40px;
+    min-width: 300px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+#upgradeScreen label {
+    display: inline-block;
+    width: 60px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #a0e0a0;
+    margin-right: 8px;
+}
+
+#upgradeScreen button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+#upgradeScreen button:hover {
+    background-color: #45a049;
+}
+
+#upgradeScreen button:active {
+    transform: scale(0.9);
+}
+
+#upgradeScreen span {
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: white;
+}
+
+#upgradeScreen br {
+    display: block;
+    margin: 8px 0;
+}

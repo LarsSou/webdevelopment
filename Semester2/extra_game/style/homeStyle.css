@@ -12,11 +12,17 @@
 .button:first-child{
     margin-bottom: 10px;
 }
+.button:last-child{
+    margin-top: 10px;
+}
 #homeScreen{
     padding-left: 45%;
     padding-right: 55%;
     padding-top: 20%;
 }
 #gameScreen {
+    display: none;
+}
+#upgradeScreen{
     display: none;
 }
