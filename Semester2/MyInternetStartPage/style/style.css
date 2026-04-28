@@ -1,0 +1,17 @@
+.y {
+    background-color: red;
+}
+.t, .g {
+    background-color: blue;
+}
+.i {
+    background-color: deeppink;
+}
+.y, .t, .i, .g {
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+}
+#history-container{
+    margin-top: 20px;
+}
