@@ -1,0 +1,16 @@
+
+#Opgenomen-Bestellingen {
+    background-color: yellow;
+    border: 2px solid black;
+    margin-right: 70%;
+    text-align: center;
+}
+
+#Opgenomen-Bestellingen, p {
+    border-bottom: solid black 1px;
+}
+
+#Opgenomen-Bestellingen p:last-of-type {
+    border-bottom: solid black 2px;
+
+}

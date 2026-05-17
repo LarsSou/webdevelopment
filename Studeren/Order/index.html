@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<label for="Function">What are you?</label>
+<select id="Function">
+  <option value="Waiter">Waiter</option>
+  <option value="Chef">Chef</option>
+</select>
+<button id="startBtn">Submit</button>
+
+<br><br>
+<div id="bestellingen">
+  <label for="OrderInput">Wat is de Order</label>
+  <select name="Order" id="OrderInput">
+    <option value=""></option>
+    <option value="Pasta-Kip">Pasta Kip</option>
+    <option value="Biefstuk">Biefstuk</option>
+    <option value="Croque-Monsieur">Croque Monsieur</option>
+    <option value="Zomerslaatje">Zomerslaatje</option>
+    <option value="Varkensribbetjes">Varkensribbetjes</option>
+  </select>
+  <br>
+  <label for="timeInput">Hoe lang wachten?</label>
+  <input type="time" id="timeInput" placeholder="00:00:00"/>
+  <br>
+  <label for="Supplement">Supplementen?</label>
+  <input type="checkbox" id="Supplement">
+
+</div>
+<button id="ClearOrderBtn">clear</button>
+<br>
+<label for="Opgenomen-Bestellingen">Orders</label>
+<div id="Opgenomen-Bestellingen"></div>
+
+<script src="js.js"></script>
+</body>
+</html>

@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f792014e-9d93-41dc-8399-dbb73b14393f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Studeren/Order/css.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studeren/Order/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studeren/Order/js.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studeren/vrienden/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studeren/vrienden/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Studeren/vrienden/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Semester2/Labo_14/html/dialoog.html" beforeDir="false" afterPath="$PROJECT_DIR$/Semester2/Labo_14/html/dialoog.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +24,8 @@
       <list>
         <option value="HTTP Request" />
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -67,6 +74,7 @@
     &quot;Node.js.homeMenu.js.executor&quot;: &quot;Debug&quot;,
     &quot;Node.js.index.js.executor&quot;: &quot;Debug&quot;,
     &quot;Node.js.innerhtmlAanpassing.js.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.js.js.executor&quot;: &quot;Debug&quot;,
     &quot;Node.js.movement.js.executor&quot;: &quot;Debug&quot;,
     &quot;Node.js.script.js.executor&quot;: &quot;Debug&quot;,
     &quot;Node.js.searchScript.js.executor&quot;: &quot;Debug&quot;,
@@ -101,11 +109,11 @@
       <recent name="$PROJECT_DIR$/Semester2/Labo_19/matching_game/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Studeren/vrienden" />
       <recent name="$PROJECT_DIR$/Semester2/extra_game/sounds" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_20" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_20/contactManager" />
       <recent name="$PROJECT_DIR$/Semester2/Labo_20/Contactmanager" />
-      <recent name="$PROJECT_DIR$/Semester2/Labo_20/Dagen_Op_De_Wereldbol/style" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -179,6 +187,19 @@
       <workItem from="1777373974317" duration="439000" />
       <workItem from="1777377900715" duration="8387000" />
       <workItem from="1777387114710" duration="2096000" />
+      <workItem from="1777532007544" duration="187000" />
+      <workItem from="1777986732796" duration="2000" />
+      <workItem from="1778256225375" duration="5000" />
+      <workItem from="1778490218693" duration="2229000" />
+      <workItem from="1778581593045" duration="109000" />
+      <workItem from="1778589266744" duration="29000" />
+      <workItem from="1778589307725" duration="46000" />
+      <workItem from="1778589359419" duration="27000" />
+      <workItem from="1778589399541" duration="7380000" />
+      <workItem from="1778777184501" duration="3661000" />
+      <workItem from="1778857441577" duration="1845000" />
+      <workItem from="1778957376062" duration="6277000" />
+      <workItem from="1779006321236" duration="2469000" />
     </task>
     <servers />
   </component>
