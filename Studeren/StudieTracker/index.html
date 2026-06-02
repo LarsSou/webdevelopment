@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Study Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Study Tracker</h1>
+    <!-- Vak kiezen -->
+    <label for="vak">Vak</label>
+    <select id="vak">
+        <option value="">Kies vak</option>
+        <option value="Analyse & Design">Analyse & Design</option>
+        <option value="ServerManagement">Server Management</option>
+        <option value="Data Analyse">Data Analyse</option>
+        <option value="Webdevlopment">Webdevelopment</option>
+        <option value="System Management">System Management</option>
+        <option value="Netwerken Practicum">Netwerken Practicum</option>
+    </select>
+
+    <!-- Minuten -->
+    <label for="minuten">
+        Aantal minuten
+    </label>
+    <input
+            id="minuten"
+            type="number"
+            placeholder="Bijvoorbeeld 45">
+    <!-- Moeilijkheid -->
+    <label for="moeilijkheid">
+        Moeilijkheid
+    </label>
+    <select id="moeilijkheid">
+        <option value="">
+            Kies niveau
+        </option>
+        <option value="Makkelijk">
+            Makkelijk
+        </option>
+        <option value="Gemiddeld">
+            Gemiddeld
+        </option>
+        <option value="Moeilijk">
+            Moeilijk
+        </option>
+    </select>
+    <!-- Voltooid -->
+    <div class="checkboxContainer">
+        <input
+                type="checkbox"
+                id="voltooid">
+        <label for="voltooid">
+            Studie voltooid
+        </label>
+    </div>
+
+    <!-- Knoppen -->
+    <button id="toevoegen">
+        Voeg studiesessie toe
+    </button>
+    <button id="wissen">
+        Wis alles
+    </button>
+    <!-- Session teller -->
+    <div id="sessieTeller">
+        Studiesessies toegevoegd:
+        0
+    </div>
+    <!-- Totale studietijd -->
+    <div id="totaleTijd">
+        Totale minuten:
+        0
+    </div>
+    <!-- Zoekfunctie -->
+    <input
+            id="zoekVak"
+            type="text"
+            placeholder="Zoek vak..."
+    >
+    <!-- Filter -->
+    <label for="filterMoeilijkheid">
+        Filter moeilijkheid
+    </label>
+    <select id="filterMoeilijkheid">
+        <option value="Alles">
+            Alles
+        </option>
+        <option value="Makkelijk">
+            Makkelijk
+        </option>
+        <option value="Gemiddeld">
+            Gemiddeld
+        </option>
+        <option value="Moeilijk">
+            Moeilijk
+        </option>
+    </select>
+    <!-- Sorteer -->
+    <button id="sorteer">
+        Sorteer op minuten
+    </button>
+    <hr>
+    <!-- Hier komen studies -->
+    <div id="lijst">
+
+    </div>
+
+</div>
+
+
+<script src="script.js" defer></script>
+</body>
+</html>

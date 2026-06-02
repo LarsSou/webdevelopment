@@ -1,0 +1,37 @@
+body {
+    background-color: green;
+}
+
+#MessageContainer {
+    background-color: white;
+    border-radius: 15px;
+    height: 750px;
+    width: 500px;
+    margin: 0 auto;
+    position: relative; /* ← toegevoegd */
+}
+
+#currentUserContainer {
+    border-bottom: 5px solid black;
+    height: 50px;
+    margin-top: 10px;
+}
+
+#inputContainer {
+    border-top: solid 5px black;
+    position: absolute; /* ← toegevoegd */
+    bottom: 0;          /* ← toegevoegd */
+    width: 100%;        /* ← zodat het de volledige breedte heeft */
+    height: 150px;
+}
+input{
+    width: fit-content;
+}
+
+label {
+    margin-left: 10px;
+}
+
+select {
+    width: auto;
+}

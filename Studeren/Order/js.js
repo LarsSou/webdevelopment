@@ -94,39 +94,63 @@ const renderOrder = (order) => {
 };
 
 const MakeOrders = () => {
+
     const order = {
         Gerecht: document.getElementById("OrderInput").value,
         Supplement: document.getElementById("SupplementenKeuze")?.value ?? null,
         wachtTijd: document.getElementById("timeInput").value,
     };
 
-    if (order.Gerecht === "") return;
+    // Geen lege bestelling toelaten
+    if (order.Gerecht.trim() === "") return;
 
-    const opgeslagen = JSON.parse(localStorage.getItem("orders") || "[]");
+    // Orders ophalen uit localStorage
+    const opgeslagen = JSON.parse(
+        localStorage.getItem("orders") || "[]"
+    );
+
+    // Nieuwe order toevoegen
     opgeslagen.push(order);
-    localStorage.setItem("orders", JSON.stringify(opgeslagen));
 
+    // Terug opslaan
+    localStorage.setItem(
+        "orders",
+        JSON.stringify(opgeslagen)
+    );
+
+    // Meteen tonen
     renderOrder(order);
+
+    // Inputs leegmaken (optioneel)
+    document.getElementById("OrderInput").value = "";
+
+    const supplement = document.getElementById("SupplementenKeuze");
+    if (supplement) {
+        supplement.value = "";
+    }
+
+    document.getElementById("timeInput").value = "";
 };
 
+
 const LoadOrders = () => {
-    const tickets = document.getElementsByClassName("OrderDiv");
 
-    for (let i = 0; i < tickets.length; i++) {
-        if (tickets[i].querySelector(".IsReadyCheckbox")) continue;
+    // Container leegmaken
+    const container = document.getElementById(
+        "OrdersContainer"
+    );
 
-        const isReady = document.createElement("input");
-        isReady.type = "checkbox";
-        isReady.checked = false;
-        isReady.className = "IsReadyCheckbox";
+    container.innerHTML = "";
 
-        const labelReady = document.createElement("label");
-        labelReady.htmlFor = "IsReadyCheckbox";
-        labelReady.textContent = "Is Food Ready?";
+    // Orders uit localStorage halen
+    const opgeslagen = JSON.parse(
+        localStorage.getItem("orders") || "[]"
+    );
 
-        tickets[i].appendChild(labelReady);
-        tickets[i].appendChild(isReady);
-    }
+    // Alles opnieuw tonen
+    opgeslagen.forEach(order => {
+        renderOrder(order);
+    });
 };
 
 const clearInputs = () => {

@@ -1,0 +1,28 @@
+body{
+    background-color: green;
+}
+#inputContainer {
+    margin-left: 40%;
+    background-color:white;
+    margin-right: 40%;
+    padding : 10px;
+}
+.RedBackground{
+    background-color: red;
+}
+.GreenBackground{
+    background-color: green;
+}
+.BlueBackground{
+    background-color: blue;
+}
+.WhiteBackground{
+    background-color: white;
+}
+#spacePlace{
+    height: 100px;
+    width: 100px;
+    align-content: center;
+    margin: 0 auto;
+    padding-left: 30px
+}

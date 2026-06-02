@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f7;
+    margin: 0;
+    padding: 40px;
+}
+
+.container {
+    width: 500px;
+    margin: auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    box-shadow:
+            0 4px 12px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+select,
+input,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+    font-size: 15px;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: scale(1.02);
+}
+
+#toevoegen {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+}
+
+#wissen {
+    background-color: #e53935;
+    color: white;
+    border: none;
+}
+
+#sessieTeller {
+    margin-top: 20px;
+    padding: 12px;
+
+    background-color: #eef3ff;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+#lijst {
+    margin-top: 20px;
+}
+
+.studyItem {
+    background-color: white;
+
+    border-left: 5px solid #4caf50;
+
+    padding: 12px;
+
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+
+    box-shadow:
+            0 2px 6px rgba(0,0,0,0.08);
+}
+
+.studyItem p {
+    margin: 5px 0;
+}
+
+.voltooid {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.studyHeader {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
+    }
+
+}
